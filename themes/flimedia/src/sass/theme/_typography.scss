@@ -1,0 +1,109 @@
+/*************************************
+Typography
+**************************************/
+
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Setting Kadence Global Font Size Variables */
+body, .editor-styles-wrapper {
+  --wp--preset--font-size--small: 12px;
+  --wp--preset--font-size--medium: 14px; // same as regular paragraph tag
+  --wp--preset--font-size--large: 18px;
+  --wp--preset--font-size--x-large: 22px;
+}
+
+
+:root {
+  --lineHeight: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ 
+}
+
+h1, h1 a, a h1 {
+
+}
+
+h2, h2 a, a h2 {
+
+}
+
+h3,
+h3 a,
+a h3 {
+
+}
+
+h4, h4 a, a h4 { 
+
+}
+
+h5, h5 a, a h5 { 
+
+}
+
+h6, h6 a, a h6 {
+
+}
+
+p, ul, ol {
+
+}
+
+a {
+ 
+}
+
+p a {
+  text-decoration: none;
+  color: #B61615;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/*Paragraph spacing in entry content */
+article .entry-content p + p,
+article .entry-content p + ul,
+article .entry-content ul + ul,
+article .entry-content ul + ol,
+article .entry-content ol + ol,
+article .entry-content ol + ul,
+article .entry-content p + ol,
+article .entry-content ul + p,
+article .entry-content ol + p,
+article .entry-content h1 + p,
+article .entry-content h2 + p,
+article .entry-content h3 + p,
+article .entry-content h4 + p,
+article .entry-content h5 + p,
+article .entry-content h6 + p {
+	margin-top: .75rem;
+}
+
+
+p a {
+	text-decoration: none;
+	color: $theme-red;
+}
+p a:hover {
+	text-decoration: underline;
+}
+
+
+@media screen and (max-width: $small) {
+	p.has-large-font-size, p.large {
+    font-size: 16px !important;
+    line-height: 28px !important;
+  }
+}

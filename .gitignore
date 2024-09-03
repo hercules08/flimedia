@@ -1,0 +1,24 @@
+# OS generated files #
+######################
+.DS_Store*
+
+# SASS #
+##########
+.sass-cache
+
+# Workspace #
+##############
+languages/
+upgrade/
+upgrade-temp-backup/
+node_modules/
+build/
+blocksy/
+
+# Ignore node_modules and build inside specific theme directories
+themes/flimedia/node_modules/
+themes/flimedia/build/
+
+# Exclude directories anywhere in the project with a similar pattern
+**/node_modules/
+**/build/

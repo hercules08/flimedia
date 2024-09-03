@@ -1,0 +1,16 @@
+{
+    "name": "acf/event-detail-map",
+    "title": "Event Detail Map",
+    "description": "A custom Event Details with Map block for RTGT INEOS Event Single pages.",
+    "style": [ "file:./event-detail-map.css" ],
+    "category": "embed",
+    "icon": "calendar-alt",
+    "keywords": ["Events", "Event", "Map"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "event-detail-map.php"
+    },
+    "supports": {
+        "anchor": true
+    }
+}

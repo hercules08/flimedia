@@ -1,0 +1,18 @@
+{
+    "name": "acf/content-cards",
+    "title": "Content Cards",
+    "description": "A custom content-cards block that uses ACF fields.",
+    "style": [ "file:./content-cards.css" ],
+    "category": "formatting",
+    "icon": "smiley",
+    "keywords": ["content-cards"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "content-cards.php"
+    },
+    "supports": {
+        "anchor": true
+    },
+    "editorScript": "content-cards-handle-js-editor",
+    "viewScript": "content-cards-handle-js-view"
+}

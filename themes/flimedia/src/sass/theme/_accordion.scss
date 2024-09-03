@@ -1,0 +1,44 @@
+.accordion-custom {
+    .accordion-item {
+        margin-bottom: 10px;
+        overflow: hidden; /* Ensure content does not overflow */
+        .accordion-header {
+            padding: 10px 5px 10px 0px;
+            border-bottom: 2px solid $theme-blue-dark;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .accordion-title, .accordion-icon {
+                color: $theme-blue-dark;
+                transition: all .2s ease;
+            }
+        }
+        .accordion-icon {
+            font-size: 8px;
+            font-weight: 300;
+            transition: all 200ms ease;
+        }
+        .accordion-header:hover {
+            .accordion-title, .accordion-icon {
+                color: $theme-red;
+            }
+        }
+        .accordion-content {
+            transition: max-height 0.3s ease-out; /* Smooth transition for max-height and padding */
+            max-height: 0; /* Initially hidden */
+            overflow: hidden;
+        }
+        &.active {
+            .accordion-content {
+                max-height: 200px; /* Adjust height as needed */
+            }
+            .accordion-icon {
+                transform: rotateX(180deg);
+                transition: all 200ms ease;
+            }
+        } 
+    }
+  }
+  
+ 

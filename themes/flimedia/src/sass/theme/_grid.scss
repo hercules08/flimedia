@@ -1,0 +1,128 @@
+/*************************************
+Grid
+**************************************/
+
+/*************************************
+Start - Blocksy Grid Overrides
+**************************************/
+
+article>.entry-content>*:not(.alignfull):not(.alignwide),
+.wp-block-post-content>*:not(.alignwide):not(.alignfull)  {
+  min-width: calc(#{$site-min-width} - #{$gutter-width-mobile-2x}) !important;
+}
+
+
+@media (max-width: $small) {
+  :root {
+      --container-width-base: calc(100vw - 40px) !important;
+  }
+  .ct-container-fluid {
+    --container-edge-spacing: calc(100vw - 40px) !important;
+    min-width: calc(#{$site-min-width} - #{$gutter-width-mobile-2x}) !important;
+  }
+}
+
+@media (min-width: $medium) {
+  :root {
+      --container-width-base: calc(100vw - 40px) !important;
+  }
+}
+
+@media (min-width: $medium) and (max-width: $tablet-max) {
+  .ct-container-fluid {
+    --container-edge-spacing: calc(100vw - 40px) !important;
+}
+}
+
+@media (min-width: $large) {
+  :root {
+      --container-width-base: calc(100vw - 100px) !important;
+  }
+  .ct-container-fluid {
+    --container-edge-spacing: calc(100vw - 40px) !important;
+  }
+}
+
+/*************************************
+End - Blocksy Grid Overrides
+**************************************/
+
+
+* {
+  box-sizing: border-box;
+}
+
+/*************************************
+CSS Grid Class Helpers 
+**************************************/
+
+.grid {
+  display: grid;
+  grid-gap: $mobile-grid-gap; // default grid gap. can be overwritten in block css
+}
+.grid.cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+.grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid.cols-25-75 {
+  grid-template-columns: minmax(0, 25%) minmax(0, 75%);
+}
+.grid.cols-40-60 {
+  grid-template-columns: minmax(0, 40%) minmax(0, 60%);
+}
+.grid.cols-60-40 {
+  grid-template-columns: minmax(0, 60%) minmax(0, 40%);
+}
+
+@media (max-width: $tablet-max) {
+  .grid.cols-md-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid.cols-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid.cols-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: $small) {
+  .grid.cols-sm-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid.cols-sm-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid.cols-sm-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: $large) {
+  .grid.cols-lg-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid.cols-lg-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid.cols-lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: $xlarge) {
+  .grid.cols-xl-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid.cols-xl-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid.cols-xl-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,28 @@
+/*************************************
+Buttons
+**************************************/
+
+.wp-block-button, button, .button {
+
+}
+
+
+/* Button Line Height Fix for full width buttons on mobile */
+
+.button, .ct-button, .added_to_cart, .ct-button-ghost, [type=submit], .wp-element-button, .wp-block-button__link, a.showlogin, a.restore-item, button.regform-button, button[class*=ajax], .submit:where(:not(div.submit)), .forminator-ui[data-design=none] .forminator-button {
+	line-height: var(--buttonLineHeight, 28px)
+}
+
+/* Kadence button Outline Style */
+.kb-btn-global-outline, .kt-button.kb-btn-global-outline {
+	color: $theme-red !important;
+	background: $white !important;
+	border: 1px solid $theme-red !important;
+	&:hover {
+		color: $white !important;
+		background: $theme-red !important; 
+		.kb-svg-icon-wrap {
+			color: $white !important;
+		}
+	}
+}

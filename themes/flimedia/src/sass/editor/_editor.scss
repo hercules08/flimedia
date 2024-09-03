@@ -1,0 +1,112 @@
+/*************************************
+Editor
+**************************************/
+@import "../theme/utility";
+@import "../theme/global";
+@import "../theme/buttons";
+
+
+.acf-block-preview {
+  /* Import Block Previews */
+  @import "../theme/grid";
+  @import "../theme/typography";
+}
+
+.editor-styles-wrapper {
+  --wp--preset--font-size--small: 12px !important;
+  --wp--preset--font-size--medium: 14px !important; // same as regular paragraph tag
+  --wp--preset--font-size--large: 18px !important;
+  --wp--preset--font-size--x-large: 22px !important;
+  --lineHeight: 1.25;
+  .is-layout-flow > {
+      p + p,
+      p + ul,
+      ul + ul,
+      ul + ol,
+      ol + ol,
+      ol + ul,
+      p + ol,
+      ul + p,
+      ol + p,
+      h1 + p,
+      h2 + p,
+      h3 + p,
+      h4 + p,
+      h5 + p,
+      h6 + p {
+        margin-top: .75rem;
+        margin-block-start: .75rem;
+      }
+  }
+  a {
+    color: $theme-red !important;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .wp-block-post-title a {
+    color: $theme-blue-dark !important;
+    &:hover {
+      color: $theme-red !important;
+    }
+  }
+}
+
+
+/* Global Classes */
+.wp-block-table.table-width-auto table {
+  width: auto;	
+}
+
+p.has-large-font-size, p.large {
+  font-size: 18px !important;
+  line-height: 30px !important;
+}
+
+.wp-block-table.no-borders table, .wp-block-table.no-borders th, .wp-block-table.no-borders td {
+  border-color: transparent !important;
+  padding-left: 0px;
+}
+
+.no-column-padding > .kt-row-column-wrap, .no-column-padding.kt-row-column-wrap {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+@media screen and (max-width: 689px) {
+.hide-on-mobile {
+  display: none;
+}
+}
+
+@media screen and (min-width: 690px) {
+.mobile-only {
+  display: none;
+}
+}
+
+@media screen and (max-width: $tablet-max) {
+  .display-block-tablet {
+      display: block;
+      width: 100%;
+  }
+}
+
+.display-block {
+  display: block;
+  width: 100%;
+}
+@media screen and (max-width: $small) {
+  .display-block-mobile, .wp-block-kadence-modal.display-block-mobile button {
+      display: block;
+      width: 100%;
+  }
+}
+
+
+
+.kadence-block-pro-modal.preview-active .kt-modal-popup,
+.kadence-block-pro-modal.preview-active .block-editor-inner-blocks {
+  max-height: 90vh;
+}

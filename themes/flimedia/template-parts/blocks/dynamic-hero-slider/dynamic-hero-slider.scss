@@ -1,0 +1,517 @@
+@import "../../../src/sass/theme/utility";
+
+// Define variables
+$theme-blue: #00152C;
+$theme-red: #B61615;
+
+/* START: Editor Specific Styles */
+.wp-block-acf-dynamic-hero-slider.acf-block-preview {
+  .dynamic-hero-slider .dynamic-tab-container .dynamic-tab h4,
+  .dynamic-hero-slider .dynamic-tab-container .dynamic-tab h5 {
+    margin-top: 0 !important;
+  }
+  .button {
+    background-color: $theme-red;
+    color: $white;
+    text-transform: uppercase;
+    font-family: Oswald, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    padding: 20px 30px;
+    border-radius: 0;
+    border:1px solid transparent;
+    transition: all .2s ease;
+    &:hover {
+      background-color: $white;
+      color: $theme-blue;
+      border: 1px solid $theme-blue;
+    }
+  }
+}
+/* END: Editor Specific Styles */
+ 
+.dynamic-hero-slider {
+  width: 100% !important;
+  // max-width: 1920px !important;
+  margin: 0 auto !important;
+
+  .dynamic-slider-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+
+    @media (max-width: 768px) {
+      height: 400px;
+    }
+
+    @media (max-width: 414px) {
+      height: 300px;
+    }
+    @media screen and (min-width: 1920px) {
+      height: 800px;
+    }
+  }
+
+  .dynamic-slide {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    h1 {
+      color: $white;
+      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+      margin-bottom: 40px;
+
+      @media (min-width: 690px) and (max-width: 1024px) {
+        font-size: 62px;
+        line-height: 1;
+      }
+
+      @media (max-width: 690px) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .dynamic-slide-background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    position: relative;
+    padding: 0 80px;
+    text-align: center;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 21, 44, 0.5);
+      z-index: -1;
+    }
+
+    img {
+      position: relative;
+      max-width: 237px;
+      top: -14px;
+    }
+  }
+
+  .dynamic-slide.active {
+    opacity: 1;
+  }
+
+  .dynamic-slider-prev,
+  .dynamic-slider-next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+
+    @media (max-width: 1280px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    svg {
+      width: 18px;
+    }
+  }
+
+  .dynamic-slider-navigation {
+    @media (max-width: 690px) {
+      display: none;
+    }
+  }
+
+  .dynamic-slider-prev {
+    left: 0;
+    background: $white;
+    border: 0;
+
+    svg {
+      transform: rotate(180deg);
+      fill: $theme-red;
+    }
+  }
+
+  .dynamic-slider-next {
+    right: 0;
+    background: $white;
+    border: 0;
+
+    svg {
+      fill: $theme-red;
+    }
+  }
+
+  .dynamic-slider-prev.hidden,
+  .dynamic-slider-next.hidden {
+    display: none;
+  }
+
+  .dynamic-tab-title-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $theme-blue;
+
+    .dynamic-tab-title {
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      cursor: pointer;
+      transition: opacity 0.5s ease;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      text-align: center;
+      min-height: 207px;
+      height: auto;
+      // padding: 25px 15px;
+      padding: 15px 15px 25px 15px;
+
+      @media (max-width: 768px) {
+        min-height: 0;
+        padding: 15px;
+      }
+
+      >div {
+        height: 100%;
+      }
+
+      h5 {
+        display: block;
+        max-width: 110px;
+        width: 100%;
+        background: transparent;
+        color: $white;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-top: 10px;
+
+        @media (max-width: 768px) {
+          display: none;
+        }
+      }
+
+      h5.tab-title-wide {
+        max-width: 165px;
+        margin-bottom: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 80px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      &.active {
+        opacity: 1;
+        position: relative;
+
+        &:after {
+          bottom: 0;
+          left: 50%;
+          border: solid transparent;
+          content: "";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+          border-color: rgba(182, 22, 21, 0);
+          border-bottom-color: $theme-red;
+          border-width: 18px;
+          margin-left: -18px;
+
+          @media (max-width: 768px) {
+            border-width: 11px;
+            margin-left: -11px;
+          }
+        }
+      }
+    }
+  }
+
+  .dynamic-tabs {
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    h4,
+    h5 {
+      margin-bottom: 20px;
+    }
+
+    .tab-title-default {
+      margin-bottom: 0;
+    }
+  }
+
+  .dynamic-tab-container {
+    border-top: 10px solid $theme-red;
+
+    .dynamic-tab {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      background-color: $theme-blue;
+      padding: 50px;
+
+      @media (max-width: 768px) {
+        padding: 25px;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: $white;
+      }
+
+      h4,
+      h5 {
+        margin-top: -15px !important;
+      }
+
+      p {
+        color: $white;
+        font-family: Open Sans;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: left;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+
+      p.disclaimer {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: left;
+      }
+
+      a {
+        color: $theme-red;
+      }
+
+      .button {
+        margin-top: 25px;
+        color: $white;
+
+        &:hover {
+          color: $theme-blue;
+          text-decoration: none;
+        }
+      }
+
+      &.active {
+        display: block;
+        opacity: 1;
+      }
+    }
+
+    .quote {
+      position: relative;
+
+      p {
+        font-family: Oswald, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 40px;
+        text-align: left;
+        position: relative;
+
+        @media (max-width: 768px) {
+          font-size: 20px;
+          line-height: 26px;
+        }
+      }
+
+      >p {
+        padding-left: 50px;
+        padding-right: 5px;
+
+        @media (max-width: 768px) {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
+      }
+
+      p:last-child {
+        margin-top: 20px;
+      }
+
+      .left-quote,
+      .right-quote {
+        font-family: Oswald, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 90px;
+        font-weight: 700;
+        line-height: 0;
+        text-align: left;
+        color: $theme-red;
+
+        @media (max-width: 768px) {
+          font-size: 75px;
+        }
+      }
+
+      .left-quote {
+        position: absolute;
+        left: 0;
+        top: 40px;
+
+        @media (max-width: 768px) {
+          top: 30px;
+        }
+      }
+
+      .right-quote {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
+
+      .quote-author,
+      .quote-author-title {
+        font-family: Oswald, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 30px;
+        text-align: left;
+        display: block;
+        text-transform: uppercase;
+      }
+    }
+
+    .row {
+      display: flex;
+
+      @media (max-width: $large) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .col-full {
+      -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      >div {
+        column-count: 2;
+        column-gap: 50px;
+
+        @media (max-width: $large) {
+          column-count: 1;
+          column-gap: initial;
+        }
+      }
+    }
+
+    .col-left {
+      -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-right: 25px;
+
+      @media (max-width: $large) {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+
+    .col-right {
+      -webkit-flex: 0 0 50%;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 25px;
+
+      @media (max-width: $large) {
+        -webkit-flex: 0 0 100%;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+        width: 100%;
+        padding-left: 0;
+        margin-top: 25px;
+      }
+    }
+
+    .image {
+      img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+      }
+      @media screen and (min-width: 1920px) {
+        position: relative;
+        overflow: hidden;
+        height: 650px;
+        img {
+          position: absolute;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 1921px) {
+    .dynamic-tab > * {
+      max-width: 1920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media only screen and (min-width: 3000px) {
+    .dynamic-slider-container {
+      height: 1000px;
+    }
+  }
+}
