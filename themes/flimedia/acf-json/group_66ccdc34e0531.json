@@ -1,0 +1,229 @@
+{
+    "key": "group_66ccdc34e0531",
+    "title": "Block: CTA with Icon Button",
+    "fields": [
+        {
+            "key": "field_66d2825dd70df",
+            "label": "Block: CTA with Icon Button",
+            "name": "",
+            "aria-label": "",
+            "type": "accordion",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "open": 0,
+            "multi_expand": 1,
+            "endpoint": 0
+        },
+        {
+            "key": "field_66cd0f030cdb6",
+            "label": "CTA Setup",
+            "name": "cwib_repeater",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "pagination": 0,
+            "min": 1,
+            "max": 2,
+            "collapsed": "",
+            "button_label": "Add CTA",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_66ccdc34e26ad",
+                    "label": "Title",
+                    "name": "cwib_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66cd0f030cdb6"
+                },
+                {
+                    "key": "field_66cd0eeb0ab55",
+                    "label": "Text",
+                    "name": "cwib_text",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66cd0f030cdb6"
+                },
+                {
+                    "key": "field_66d274bc08de5",
+                    "label": "Button",
+                    "name": "cwib_btn",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_66cd0f030cdb6"
+                },
+                {
+                    "key": "field_66cd0fad0cdb7",
+                    "label": "CTA Background Color",
+                    "name": "cwib_cta_bg",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "black": "Black",
+                        "linen": "Linen",
+                        "green": "Green",
+                        "purple": "Purple",
+                        "orange": "Orange"
+                    },
+                    "default_value": "Linen",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_66cd0f030cdb6"
+                }
+            ]
+        },
+        {
+            "key": "field_66cd22edbd51c",
+            "label": "Block Settings",
+            "name": "block_settings",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_66ccdc34e26bb",
+                    "label": "Block Background Color",
+                    "name": "block_bg",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "001011": "Black",
+                        "F2EADF": "Linen",
+                        "60935D": "Green",
+                        "8367C7": "Purple",
+                        "FA4523": "Orange"
+                    },
+                    "default_value": "001011",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_66ccdc34e26c2",
+                    "label": "Block Spacing (top and bottom)",
+                    "name": "block_spacing",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "sm": "Small",
+                        "md": "Regular",
+                        "lg": "Large"
+                    },
+                    "default_value": "md",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/cta-with-icon-btn"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1725072584
+}

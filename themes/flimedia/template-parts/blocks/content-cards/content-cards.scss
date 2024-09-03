@@ -1,0 +1,12 @@
+@import "../../../src/sass/theme/utility";
+
+// Editor Specific Styles
+.wp-block-acf-content-cards.acf-block-preview {}
+
+.content-cards-block {
+  background-color: $fli-linen;
+}
+
+@media (min-width: $medium) {
+
+}

@@ -1,0 +1,12 @@
+@import "../../../src/sass/theme/utility";
+
+// Editor Specific Styles
+.wp-block-acf-cta.acf-block-preview {}
+
+.cta-block {
+  background-color: $fli-orange;
+}
+
+@media (min-width: $medium) {
+
+}
