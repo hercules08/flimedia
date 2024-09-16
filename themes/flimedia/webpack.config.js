@@ -174,5 +174,4 @@ var configBlocks = Object.assign({}, config, {
     new LiveReloadPlugin(),
   ],
 });
-
 module.exports = [configMain, configBlocks, configEditor, configLogin];

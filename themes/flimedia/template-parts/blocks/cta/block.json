@@ -1,0 +1,18 @@
+{
+    "name": "acf/cta",
+    "title": "CTA",
+    "description": "A custom cta block that uses ACF fields.",
+    "style": [ "file:./cta.css" ],
+    "category": "formatting",
+    "icon": "smiley",
+    "keywords": ["cta"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "cta.php"
+    },
+    "supports": {
+        "anchor": true
+    },
+    "editorScript": "cta-handle-js-editor",
+    "viewScript": "cta-handle-js-view"
+}

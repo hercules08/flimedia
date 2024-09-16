@@ -1,0 +1,18 @@
+{
+    "name": "acf/cta-with-icon-btn",
+    "title": "CTA with Icon Button",
+    "description": "A custom cta block that uses ACF fields.",
+    "style": [ "file:./cta-with-icon-btn.css" ],
+    "category": "formatting",
+    "icon": "smiley",
+    "keywords": ["cta"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "cta-with-icon-btn.php"
+    },
+    "supports": {
+        "anchor": true
+    },
+    "editorScript": "cta-with-icon-btn-handle-js-editor",
+    "viewScript": "cta-with-icon-btn-handle-js-view"
+}

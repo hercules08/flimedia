@@ -1,127 +1,150 @@
 <?php
-// Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) exit;
-
-// BEGIN ENQUEUE PARENT ACTION
-// AUTO GENERATED - Do not modify or remove comment markers above or below:
-
-if ( !function_exists( 'chld_thm_cfg_locale_css' ) ):
-    function chld_thm_cfg_locale_css( $uri ){
-        if ( empty( $uri ) && is_rtl() && file_exists( get_template_directory() . '/rtl.css' ) )
-            $uri = get_template_directory_uri() . '/rtl.css';
-        return $uri;
-    }
-endif;
-add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
-         
-if ( !function_exists( 'child_theme_configurator_css' ) ):
-    function child_theme_configurator_css() {
-        wp_enqueue_style( 'chld_thm_cfg_child', trailingslashit( get_stylesheet_directory_uri() ) . 'style.css', array( 'ct-main-styles','ct-admin-frontend-styles' ) );
-    }
-endif;
-add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 10 );
-
-// END ENQUEUE PARENT ACTION
-
- 
-
-
-/*****************************
- * BEGIN ENQUEUE CPT & BLOCKS 
- *****************************/
-
-// Custom Post Types
-require get_stylesheet_directory() . '/inc/cpt.php';
-
-// Blocks
-require get_stylesheet_directory() . '/template-parts/blocks.php';
-
-// END ENQUEUE CPT & BLOCKS
-
-
-
-
-/*************************************
- * BEGIN ENQUEUE FOUNDATION FRAMEWORK
- *************************************/
-
-function my_theme_enqueue_styles() {
-    wp_enqueue_style('foundation', get_template_directory_uri() . '/build/style.css');
+/**
+ * Prevent WP Debug
+*/
+if (! defined('WP_DEBUG')) {
+    die( 'Direct access forbidden.' );
 }
-add_action('wp_enqueue_scripts', 'my_theme_enqueue_styles');
 
 
+/**
+ * Init Blocksy Parent
+*/
+// add_action( 'wp_enqueue_scripts', function () {
+// 	wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+// });
 
 
-/*******************
- * BEGIN LOAD FONTS 
- *******************/
+/**
+ * Enqueue Styles & Scripts for the front-end
+ */
+function theme_load_scripts() {
+    // Path for the child theme's main.js and main.css files
+    $child_main_js_path = get_stylesheet_directory() . '/build/main.js';
+    $child_main_css_path = get_stylesheet_directory() . '/build/main.css';
 
-// Enqueue the parent theme stylesheet
-function blocksy_child_enqueue_styles() {
-    wp_enqueue_style( 'blocksy-parent-style', get_template_directory_uri() . '/style.css' );
+    // Check if the main.js file exists in the child theme and get its file modification time
+    $main_js_version = file_exists($child_main_js_path) ? filemtime($child_main_js_path) : false;
+
+    // Register and enqueue main.js from the child theme
+    wp_register_script('theme-main-js', get_stylesheet_directory_uri() . '/build/main.js', [], $main_js_version, true);
+    wp_enqueue_script('theme-main-js');
+
+    // Check if the main.css file exists in the child theme and get its file modification time
+    $main_css_version = file_exists($child_main_css_path) ? filemtime($child_main_css_path) : false;
+
+    // Enqueue main.css from the child theme
+    wp_enqueue_style('theme-main-css', get_stylesheet_directory_uri() . '/build/main.css', [], $main_css_version);
 }
-add_action( 'wp_enqueue_scripts', 'blocksy_child_enqueue_styles' );
+add_action('wp_enqueue_scripts', 'theme_load_scripts');
 
-// Adobe Fonts
-function blocksy_child_enqueue_adobe_fonts() {
-    wp_enqueue_style( 'adobe-fonts', 'https://use.typekit.net/uux3oog.css' );
+/**
+ * Admin Enqueue Styles & Scripts
+ */
+function theme_enqueue_in_admin() {
+    // Path for the child theme's editor.js and editor.css files
+    $child_editor_js_path = get_stylesheet_directory() . '/build/editor.js';
+    $child_editor_css_path = get_stylesheet_directory() . '/build/editor.css';
+
+    // Check if the editor.js file exists in the child theme and get its file modification time
+    $editor_js_version = file_exists($child_editor_js_path) ? filemtime($child_editor_js_path) : false;
+
+    // Register and enqueue editor.js from the child theme
+    wp_register_script('theme-editor-js', get_stylesheet_directory_uri() . '/build/editor.js', ['jquery'], $editor_js_version, true);
+    wp_enqueue_script('theme-editor-js');
+
+    // Check if the editor.css file exists in the child theme and get its file modification time
+    $editor_css_version = file_exists($child_editor_css_path) ? filemtime($child_editor_css_path) : false;
+
+    // Enqueue editor.css from the child theme
+    wp_enqueue_style('theme-editor-css', get_stylesheet_directory_uri() . '/build/editor.css', [], $editor_css_version);
 }
-add_action( 'wp_enqueue_scripts', 'blocksy_child_enqueue_adobe_fonts' );
-
-// Google Fonts
-function blocksy_child_enqueue_google_fonts() {
-    wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap', false );
-}
-add_action( 'wp_enqueue_scripts', 'blocksy_child_enqueue_google_fonts' );
-
-// END LOAD FONTS
-    
-    
+add_action('admin_enqueue_scripts', 'theme_enqueue_in_admin');
 
 
-/*************************
- * BEGIN DISABLE COMMENTS 
- *************************/
 
-add_action('admin_init', function () {
-    // Redirect any user trying to access comments page
-    global $pagenow;
-     
-    if ($pagenow === 'edit-comments.php') {
-        wp_safe_redirect(admin_url());
-        exit;
-    }
- 
-    // Remove comments metabox from dashboard
-    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
- 
-    // Disable support for comments and trackbacks in post types
-    foreach (get_post_types() as $post_type) {
-        if (post_type_supports($post_type, 'comments')) {
-            remove_post_type_support($post_type, 'comments');
-            remove_post_type_support($post_type, 'trackbacks');
+/**
+ * Block Settings Styles in ACF blocks
+ * Handles the retrieval of block background and spacing settings.
+ */
+function get_block_settings_styles($field_name = 'block_settings') {
+    // Fetch the block settings group field
+    $block_settings = get_field($field_name);
+
+    // Default values
+    $styles = '';
+    $classes = '';
+
+    // Get the background color
+    if (!empty($block_settings['block_bg'])) {
+        $background_color = esc_attr($block_settings['block_bg']);
+        $styles .= 'background-color: #' . $background_color . ';';
+
+        // Check for specific background color values to adjust text color
+        if (strtolower($background_color) === '001011' || strtolower($background_color) === 'black') {
+            $styles .= ' color: #ffffff;'; // Set text color to white if background is `001011` or `black`
         }
     }
-});
- 
-// Close comments on the front-end
-add_filter('comments_open', '__return_false', 20, 2);
-add_filter('pings_open', '__return_false', 20, 2);
- 
-// Hide existing comments
-add_filter('comments_array', '__return_empty_array', 10, 2);
- 
-// Remove comments page in menu
-add_action('admin_menu', function () {
-    remove_menu_page('edit-comments.php');
-});
- 
-// Remove comments links from admin bar
-add_action('init', function () {
-    if (is_admin_bar_showing()) {
-        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
-    }
-});
 
-// END DISABLE COMMENTS
+    // Get the block spacing and apply a class
+    if (!empty($block_settings['block_spacing'])) {
+        $classes .= ' spacing-' . esc_attr($block_settings['block_spacing']);
+    } else {
+        $classes .= ' spacing-md'; // Default spacing if none is set
+    }
+
+    // Return the styles and classes in an array for easy use
+    return [
+        'styles' => $styles,
+        'classes' => trim($classes),
+    ];
+}
+
+
+
+
+/**
+ * Custom Post Types
+*/
+require get_stylesheet_directory() . '/inc/cpt.php';
+
+/**
+ * Blocks
+*/
+require get_stylesheet_directory() . '/template-parts/blocks.php';
+
+
+
+
+function add_custom_preloading() {
+    ?>
+    <style type="text/css">
+        .site-main {
+            animation: fadein 0.75s normal forwards;
+            animation-delay: 0.35s;
+        }
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @-webkit-keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @-moz-keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @-ms-keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @-o-keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'add_custom_preloading');
+

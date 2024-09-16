@@ -1,26 +1,10 @@
-/*
-Theme Name: Fli Media
-Theme URI: https://creativethemes.com/blocksy/
-Template: blocksy
-Author: Fli Media
-Author URI: https://fli.social
-Description: Custom theme derived from Blocksy theme by CreativeThemes
-Version: 1.0
-Updated: Aug 2024
-
-*/
-
-
-/* @import url("../blocksy/style.css"); */
-
-
-body {
-    h1, h2, h3, h4, h5, h6, p, a {
-        font-family: 'IBM Plex Sans', sans-serif; /* Google Font */
-    }
-    
-    .font-two {
-        font-family: 'Monarcha', serif; /* Adobe Font */
-    }
-}
-
+/**
+ * Theme Name: Fli Media
+ * Description: Custom theme derived from Blocksy theme by CreativeThemes
+ * Author: Randee Layosa, Damola Omotosho
+ * Author URI: https://fli.social/
+ * Template: blocksy
+ * Text Domain: blocksy
+ * Version: 1.0
+ * Updated: Aug 2024
+ */

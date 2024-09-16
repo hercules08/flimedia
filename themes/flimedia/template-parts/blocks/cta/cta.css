@@ -1,0 +1,60 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./template-parts/blocks/cta/cta.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+/*************************************
+Utility - Variables, Tools, Functions, Mixins
+**************************************/
+/*----------------
+		Font
+------------------*/
+/*---------------------------------
+		Font Weights
+-----------------------------------*/
+/*---------------------------------
+		Mixins & Functions
+-----------------------------------*/
+/*---------------------------------
+		Fli Media Theme Colors Variables
+-----------------------------------*/
+/* Drop Cloth Linen | rgb(242,234,223) */
+/* Wealth Green | rgb(96,147,93) */
+/* Culture Purple | rgb(131,109,199) */
+/* Authentically Orange | rgb(250,69,35) */
+/* Rich Black | rgb(0,16,17) */
+/*----------------
+		Font
+------------------*/
+/* Google Font */
+/* Adobe Font */
+/*---------------------------------
+		Font Weights
+-----------------------------------*/
+/*---------------------------------
+		Mixins
+-----------------------------------*/
+.cta-block {
+  border: 1px dashed magenta;
+}
+.cta-block .block-wrapper {
+  border: 1px dotted yellow;
+}
+.cta-block .block-container {
+  border: 1px dashed blue;
+  padding: 60px;
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 15px;
+  text-align: center;
+}
+.cta-block .block-container p.cta-text {
+  font-size: 66px;
+  font-weight: 300;
+  line-height: 75.8px;
+  margin-bottom: 30px;
+}
+.cta-block .block-container .cta-block-btn {
+  display: flex;
+  justify-content: center;
+}
+
+/*# sourceMappingURL=cta.css.map*/
