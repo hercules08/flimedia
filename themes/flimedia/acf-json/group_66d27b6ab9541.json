@@ -54,7 +54,7 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "block",
             "pagination": 0,
             "min": 1,
             "max": 3,
@@ -204,11 +204,10 @@
                         "id": ""
                     },
                     "choices": {
-                        "black": "Black",
-                        "linen": "Linen",
-                        "green": "Green",
-                        "purple": "Purple",
-                        "orange": "Orange"
+                        "F2EADF": "Linen",
+                        "60935D": "Green",
+                        "8367C7": "Purple",
+                        "FA4523": "Orange"
                     },
                     "default_value": "Linen",
                     "return_format": "value",
@@ -222,7 +221,7 @@
             ]
         },
         {
-            "key": "field_66d2809c65d66",
+            "key": "field_66e78bd70ba2a",
             "label": "Block Settings",
             "name": "block_settings",
             "aria-label": "",
@@ -235,39 +234,10 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "block",
+            "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_66d27b6ac0193",
-                    "label": "Block Background Color",
-                    "name": "block_bg",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "001011": "Black",
-                        "F2EADF": "Linen",
-                        "60935D": "Green",
-                        "8367C7": "Purple",
-                        "FA4523": "Orange"
-                    },
-                    "default_value": "001011",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_66d27b6ac019a",
+                    "key": "field_66e78bd70ba2c",
                     "label": "Block Spacing (top and bottom)",
                     "name": "block_spacing",
                     "aria-label": "",
@@ -289,7 +259,7 @@
                     "return_format": "value",
                     "allow_null": 0,
                     "other_choice": 0,
-                    "layout": "horizontal",
+                    "layout": "vertical",
                     "save_other_choice": 0
                 }
             ]
@@ -313,5 +283,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725074517
+    "modified": 1726452802
 }

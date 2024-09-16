@@ -15,91 +15,69 @@ View Block.json Metadata: https://developer.wordpress.org/block-editor/reference
 -----------------------------------------------------------------------------------------------
 */
 
-// Load values and assign defaults.
-$block_settings = get_sub_field_object( 'block_bg' );
-	$bg_value = $block_settings['value'];
 
+// Create class attribute allowing for custom "className".
+$class_name = 'content-cards';
+if (!empty($block['className'])) {
+    $class_name .= ' ' . $block['className'];
+}
+
+// Fetch the block settings using the reusable function
+$block_settings = get_block_settings_styles(); 
+
+// Load block title
 $content_cards_block_title = get_field('content_cards_block_title');
 ?>
 
+
 <!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
 
-<div class="block-wrapper">
-							
-		<div class="block-container">
-			<div class="content-cards-block ">
+<div class="<?php echo esc_attr($class_name . '-block'); ?> <?php echo esc_attr($block_settings['classes']); ?>" style="<?php echo esc_attr($block_settings['styles']); ?>">
+	<div class="content-cards-block-wrapper">
+    
+		<?php if ($content_cards_block_title): ?>
+			<p class="content-cards-block-title uppercase"><?php echo esc_html($content_cards_block_title); ?></p>
+		<?php endif; ?>
 
-				<?php if( $content_cards_block_title ): ?>
-					<p><?php echo $content_cards_block_title; ?></p>
-				<?php endif; ?>
+		<div class="content-cards-block-container row">
 
-				<?php
-				// Check rows exists.
-				if( have_rows('content_cards_repeater') ):
-				?>				
+			<?php if (have_rows('content_cards_repeater')): ?>
+				<?php while (have_rows('content_cards_repeater')): the_row(); 
+					// Fetch repeater fields
+					$content_cards_type = get_sub_field('content_cards_type');
+					$content_cards_title = get_sub_field('content_cards_title');
+					$content_cards_text = get_sub_field('content_cards_text');
+					$content_cards_link = get_sub_field('content_cards_link');
+					$content_cards_bg = get_sub_field('content_cards_bg'); // Fetch the background color
+					$content_cards_image = get_sub_field('content_cards_img'); // Fetch the image field
 
-					<div class="content-cards-block-wrapper">
+					// Set the background style if color is set
+					$card_background_style = $content_cards_bg ? 'background-color: #' . esc_attr($content_cards_bg) . ';' : '';
+				?>
 
-						<?php
-						// Loop through rows.
-						while( have_rows('content_cards_repeater') ) : the_row();
+					<div class="content-card round columns small-12 medium-4" style="<?php echo $card_background_style; ?>">
+						<?php if ($content_cards_type === 'text'): ?>
+							<p class="content-card-title"><?php echo esc_html($content_cards_title); ?></p>
+						<?php elseif ($content_cards_type === 'img' && $content_cards_image): ?>
+							<div class="content-card-image">
+								<img src="<?php echo esc_url($content_cards_image['url']); ?>" alt="<?php echo esc_attr($content_cards_image['alt']); ?>">
+							</div>
+						<?php endif; ?>
 
-							$content_cards_type = get_sub_field_object( 'content_cards_type' );
-							$content_cards_type_value = $content_cards_type['value'];
-							$content_cards_title = get_sub_field( 'content_cards_title' );
-							$content_cards_img = get_sub_field( 'content_cards_img' );
-							$content_cards_text = get_sub_field( 'content_cards_text' );
-							$content_cards_link = get_sub_field( 'content_cards_link' );
-							$content_cards_bg = get_sub_field( 'content_cards_bg' );
-							$content_cards_spacing = get_sub_field( 'content_cards_spacing' );
-							?>
-							
-							<?php if( $content_cards_link ): 
-									$link_url = $content_cards_link['url'];
-									$link_target = $content_cards_link['target'] ? $content_cards_link['target'] : '_self';
-									?>
-									<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-									<?php endif; ?>
+						<p class="content-card-text"><?php echo esc_html($content_cards_text); ?></p>
 
-										<div class="content-card-container row">
-											<div class="content-card columns small-12 md-4">
 
-												<?php if( $content_cards_type['value'] === 'text' ): ?>
-													<p><?php echo esc_html($content_cards_type_value); ?></p>
-												<?php else: ?>
-													<img src="<?php echo $content_cards_img['sizes']['medium']; ?>" alt="<?php echo $content_cards_img['alt']; ?>">
-												<?php endif; ?>
+						<?php if ($content_cards_link): 
+							$link_url = $content_cards_link['url'];
+							$link_title = $content_cards_link['title'];
+							$link_target = $content_cards_link['target'] ? $content_cards_link['target'] : '_self';
+						?>
+							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>"><?php echo esc_html($link_title); ?></a>
+						<?php endif; ?>
+					</div>
 
-													<p><?php echo $content_cards_text; ?></p>
-													
-											</div>
-										</div>
-
-							<?php if( $content_cards_link ): ?>
-									</a>
-									<?php endif; ?>
-						
-						<?php
-						// End loop.
-						endwhile;
-							?>
-
-					<div>
-
-				<?php
-				endif;
-				?>		
-
-			</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
 		</div>
-
-	<!-- <?php 
-	// if( $block_settings ): ?>
-		<style type="text/css">
-			#block_settings {
-				background-color: #<?php // echo esc_attr( $block_settings['block_bg'] ); ?>;
-			}
-		</style>
-	<?php // endif; ?> -->
-
+	</div>
 </div>

@@ -6,6 +6,9 @@
  * @link https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
+
+ 
+
 function rtgt_register_acf_blocks() {
     if ( ! function_exists( 'register_block_type' ) ) {
         // Block editor is not available.

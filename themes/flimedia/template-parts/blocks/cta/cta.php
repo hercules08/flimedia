@@ -15,77 +15,78 @@ View Block.json Metadata: https://developer.wordpress.org/block-editor/reference
 -----------------------------------------------------------------------------------------------
 */
 
+// Create class attribute allowing for custom "className" and "align" values.
+$class_name = 'cta';
+if ( ! empty( $block['className'] ) ) {
+	$class_name .= ' ' . $block['className'];
+}
+
+// Fetch block settings
+$block_settings = get_block_settings_styles(); 
+
 // Load values and assign defaults.
-$block_settings = get_field_object( 'block_bg' );
-	$bg_value = $block_settings['value'];
 $cta_title = get_field( 'cta_title' );
 $cta_text = get_field( 'cta_text' );
 
 ?>
 
+
+
 <!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
 
-<div class="block-wrapper">
-		
-		<div class="block-container">
-			<div class="cta-block ">
+<div class="<?php echo esc_attr( $class_name . '-block' ); ?> <?php echo esc_attr( $block_settings['classes'] ); ?>">
+    <div class="block-wrapper">
+        <div class="block-container round" style="<?php echo esc_attr( $block_settings['styles'] ); ?>">
 
-				<?php if( $cta_title ): ?>
-					<p><?php echo $cta_title; ?></p>
-				<?php endif; ?>
+            <?php if( $cta_title ): ?>
+                <p class="cta-title uppercase"><?php echo esc_html( $cta_title ); ?></p>
+            <?php endif; ?>
 
-					<p><?php echo $cta_text; ?></p>
+            <p class="cta-text"><?php echo esc_html( $cta_text ); ?></p>
 
-					<?php
-					// Check rows exists.
-					if( have_rows('cta_repeater') ):
-					?>
+            <?php if (have_rows('cta_repeater')): ?>
+                <div class="cta-block-btn-wrapper row">
 
-					<div class="cta-block-btn-wrapper">
+                    <?php 
+                    // Count the number of buttons
+                    $button_count = 0;
+                    while (have_rows('cta_repeater')) : the_row(); 
+                        $button_count++;
+                    endwhile;
 
-						<?php
-						// Loop through rows.
-						while( have_rows('cta_repeater') ) : the_row();
+                    // Reset the loop to output buttons
+                    if ($button_count > 0) {
+                        reset_rows();
+                    }
 
-							$cta_btn = get_sub_field( 'cta_btn' );
-							$cta_bg = get_field( 'cta_bg' );
-							$cta_spacing = get_field( 'cta_spacing' );
-							?>
+                    // Output buttons with conditional styles
+                    $button_index = 0;
+                    while (have_rows('cta_repeater')) : the_row();
+                        $button_index++;
+                        $cta_btn = get_sub_field('cta_btn');
+                        $cta_bg = get_field('cta_bg');
+                        $cta_spacing = get_field('cta_spacing');
 
-								<div class="cta-block-btn-container row">
-									<div class="cta-block-btn columns small-6">
-										<?php 
-										if( $cta_btn ): 
-											$link_url = $cta_btn['url'];
-											$link_title = $cta_btn['title'];
-											$link_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
-											?>
-												<a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-										<?php endif; ?>
-									</div>
-								</div>
-						
-						<?php
-						// End loop.
-						endwhile;
-							?>
+                        // Determine the style class based on button index
+                        $btn_class = ($button_index === 2) ? 'button-outline' : 'button-default'; // Apply inverse style to the second button
+                    ?>
 
-					<div>
+                        <div class="cta-block-btn-container columns large-6">
+                            <div class="cta-block-btn">
+                                <?php if ($cta_btn): 
+                                    $link_url = $cta_btn['url'];
+                                    $link_title = $cta_btn['title'];
+                                    $link_target = $cta_btn['target'] ? $cta_btn['target'] : '_self';
+                                ?>
+                                    <a href="<?php echo esc_url($link_url); ?>" class="<?php echo esc_attr($btn_class); ?>" target="<?php echo esc_attr($link_target); ?>" type="button"><?php echo esc_html($link_title); ?></a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
 
-					<?php
-					endif;
-					?>		
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>		
 
-			</div>
-		</div>
-
-	<!-- <?php 
-	// if( $block_settings ): ?>
-		<style type="text/css">
-			#block_settings {
-				background-color: #<?php // echo esc_attr( $block_settings['block_bg'] ); ?>;
-			}
-		</style>
-	<?php // endif; ?> -->
-
+        </div>
+    </div>
 </div>

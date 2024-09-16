@@ -1,7 +1,3 @@
-@import '~foundation-sites/scss/settings';  // Import Foundation settings
-@import '~foundation-sites/scss/foundation';  // Import Foundation components
-
-
 /*************************************
 Main SCSS
 **************************************/
@@ -10,17 +6,12 @@ Main SCSS
 @import "theme/grid";
 @import "theme/typography";
 @import "theme/buttons";
-// @import "theme/icons/icons";
-// @import "theme/feature-icons";
+@import "theme/icons/icons";
+@import "theme/feature-icons";
 @import "theme/accordion";
 @import "theme/modal";
-// @import "theme/filters";
+@import "theme/filters";
 @import "theme/global";
 @import "theme/forms";
 @import "theme/header";
 @import "theme/footer";
-
-
-body {
-    background-color: red;
-}

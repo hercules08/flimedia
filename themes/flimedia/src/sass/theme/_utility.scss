@@ -1,23 +1,6 @@
-/*********************************************
+/*************************************
 Utility - Variables, Tools, Functions, Mixins
-*********************************************/
-
-$white: #ffffff;
-$black: #000000;
-
-
-// Fli Media Theme Specific Colors
-$theme-red: #B61615;
-$theme-blue-dark: #00152C;
-$fli-linen: #F2EADF; /* Drop Cloth Linen | rgb(242,234,223) */
-$fli-green: #60935D; /* Wealth Green | rgb(96,147,93) */
-$fli-purple: #8367C7; /* Culture Purple | rgb(131,109,199) */
-$fli-orange: #FA4523; /* Authentically Orange | rgb(250,69,35) */
-$fli-black: #001011; /* Rich Black | rgb(0,16,17) */
-
-
-
-
+**************************************/
 // Grid Breakpoints and spacing
 
 $small: 689.98px; // mobile max
@@ -42,27 +25,7 @@ $gutter-width-mobile-2x: 40px;
 /*----------------
 		Font
 ------------------*/
-// .ibm-plex-sans-light {
-//   font-family: "IBM Plex Sans", sans-serif;
-//   font-weight: 300;
-//   font-style: normal;
-// }
-// Monarcha Regular
-// font-family: "monarcha", serif;
-// font-weight: 400;
-// font-style: normal;
-// Monarcha Regular Italic
-// font-family: "monarcha", serif;
-// font-weight: 400;
-// font-style: italic;
-// Monarcha Bold
-// font-family: "monarcha", serif;
-// font-weight: 700;
-// font-style: normal;
-// Monarcha Bold Italic
-// font-family: "monarcha", serif;
-// font-weight: 700;
-// font-style: italic;
+
 
 
 /*---------------------------------
@@ -143,3 +106,159 @@ $gutter-width-mobile-2x: 40px;
 	@return calc($px/$rembase)+rem;
 }
 
+
+
+
+// -------------------------
+
+// Site variables.
+
+// Default Border Radius
+$border-radius: 15px;
+
+// mq breakpoints.
+$mq-breakpoints: (
+	small: 600px,
+	medium: 768px,
+	large: 1024px,
+	xlarge: 1240px
+) !default;
+
+$site_width: 1140px;
+$wide_width: 1240px;
+$padding-left: 15px;
+$padding-right: 15px;
+
+$margin-top: 60px;
+$margin-bottom: 60px;
+$row-max-width: 1440px;
+$xsmall: 321px;
+$small: 415px;
+$medium: 641px;
+$tablet: 769px;
+$large: 1025px;
+$xlarge: 1441px;
+$xxlarge: 1921px;
+
+//foundation gutter spacing combos
+$mobile-gutter-width: .625rem;
+$gutter-width: .9375rem;
+$mobile-gutter-2x: calc($mobile-gutter-width + $mobile-gutter-width);
+$gutter-2x: calc($gutter-width + $gutter-width);
+$gutter-plus-mobile: calc($gutter-width + $mobile-gutter-width);
+
+/*---------------------------------
+		Fli Media Theme Colors Variables
+-----------------------------------*/
+$theme-red: #B61615;
+$theme-blue-dark: #00152C;
+$fli-linen: #F2EADF; /* Drop Cloth Linen | rgb(242,234,223) */
+$fli-green: #60935D; /* Wealth Green | rgb(96,147,93) */
+$fli-purple: #8367C7; /* Culture Purple | rgb(131,109,199) */
+$fli-orange: #FA4523; /* Authentically Orange | rgb(250,69,35) */
+$fli-black: #001011; /* Rich Black | rgb(0,16,17) */
+
+
+// Default Colors
+$black:#000000;
+$white: #ffffff;
+
+
+
+/*----------------
+		Font
+------------------*/
+// Global theme fonts.
+$font__main: "IBM Plex Sans", sans-serif; /* Google Font */
+$font__secondary: "Monarcha", serif; /* Adobe Font */
+// Global code font
+// $font__code: "Unna", sans-serif, monospace;
+// Fallback font when font is not loaded via WebFonts JS.
+$font__fallback: sans-serif;
+// Base line height.
+$font__base-line-height: 30px;
+
+
+/*---------------------------------
+		Font Weights
+-----------------------------------*/
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+
+
+/*---------------------------------
+		Mixins
+-----------------------------------*/
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@mixin font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin font-family($font: $font__main ) {
+	font-family: $font__main;
+}
+
+@mixin clearfix {
+	&::after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: '';
+		clear: both;
+		height: 0;
+	}
+}
+
+@mixin media($args...) {
+	$media-type: 'only screen';
+	$media-type-key: 'media-type';
+	$args: keywords($args);
+	$expr: '';
+
+	@if map-has-key($args, $media-type-key) {
+		$media-type: map-get($args, $media-type-key);
+		$args: map-remove($args, $media-type-key);
+	}
+
+	@each $key,
+	$value in $args {
+		@if $value {
+			$expr: "#{$expr} and (#{$key}: #{$value})";
+		}
+	}
+
+	// @media #{$media-type} #{$expr} {
+	// 	@content;
+	// }
+}
+
+@mixin media-max($max) {
+	@include media($max-width: ($max - 1)) {
+		@content;
+	}
+}
+
+@mixin media-min($min) {
+	@include media($min-width: $min) {
+		@content;
+	}
+}
+
+@function background_url($image ){
+@return url("../img/" + $image );
+}
+
+@function rem($px, $rembase: 16) {
+	@return calc($px/$rembase)+rem;
+}

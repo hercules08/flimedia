@@ -13,6 +13,41 @@ Buttons
 	line-height: var(--buttonLineHeight, 28px)
 }
 
+
+a[type=button] {
+	display: block;
+	border-radius: 30px;
+	width: 300px;
+	padding: 10px;
+	margin: 10px;
+}
+
+.button-default {
+	background-color: $fli-black;
+	color: $white;
+	border: 2px solid $fli-black;
+	&:hover {
+		background-color: transparent; 
+		color: $black;
+		font-weight: 500;
+	}
+}
+
+.button-outline {
+	background-color: transparent;
+    color: $fli-black;
+    border: 2px solid $fli-black;
+	font-weight: 500;
+	&:hover {
+		background-color: $fli-black; 
+		color: $white;
+	}
+}
+
+
+
+
+
 /* Kadence button Outline Style */
 .kb-btn-global-outline, .kt-button.kb-btn-global-outline {
 	color: $theme-red !important;

@@ -3,10 +3,29 @@
 // Editor Specific Styles
 .wp-block-acf-cta-with-icon-btn.acf-block-preview {}
 
+
 .cwib-block {
-  background-color: $fli-linen;
-}
 
-@media (min-width: $medium) {
-
+  .cwib-block-btn {
+    padding: 10px;
+    position: relative; /* Make the div a positioning context */
+  
+    p.cwib-text {
+      font-size: 66px;
+      font-weight: 300;
+      line-height: 75.8px;
+    }
+    
+    a { /* If a link is set, this will turn the whole block into a clickable element*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10; /* Bring the <a> to the front */
+        text-indent: -9999px; /* Hide link text but keep it accessible */
+        background: transparent; /* Ensure the link doesn’t cover content visually */
+    }
+  
+  }
 }

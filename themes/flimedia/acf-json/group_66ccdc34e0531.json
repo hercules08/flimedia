@@ -116,11 +116,11 @@
                         "id": ""
                     },
                     "choices": {
-                        "black": "Black",
-                        "linen": "Linen",
-                        "green": "Green",
-                        "purple": "Purple",
-                        "orange": "Orange"
+                        "001011": "Black",
+                        "F2EADF": "Linen",
+                        "60935D": "Green",
+                        "8367C7": "Purple",
+                        "FA4523": "Orange"
                     },
                     "default_value": "Linen",
                     "return_format": "value",
@@ -149,35 +149,6 @@
             },
             "layout": "row",
             "sub_fields": [
-                {
-                    "key": "field_66ccdc34e26bb",
-                    "label": "Block Background Color",
-                    "name": "block_bg",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "001011": "Black",
-                        "F2EADF": "Linen",
-                        "60935D": "Green",
-                        "8367C7": "Purple",
-                        "FA4523": "Orange"
-                    },
-                    "default_value": "001011",
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": ""
-                },
                 {
                     "key": "field_66ccdc34e26c2",
                     "label": "Block Spacing (top and bottom)",
@@ -225,5 +196,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1725072584
+    "modified": 1726447767
 }

@@ -15,47 +15,65 @@ View Block.json Metadata: https://developer.wordpress.org/block-editor/reference
 -----------------------------------------------------------------------------------------------
 */
 
-// Load values and assign defaults.
-$block_settings = get_field_object( 'block_bg' );
-	$bg_value = $block_settings['value'];
-
+// Create class attribute allowing for custom "className" and "align" values.
 	// Note for this block: cwib = cta with icon button
+
+$class_name = 'cwib';
+if ( ! empty( $block['className'] ) ) {
+	$class_name .= ' ' . $block['className'];
+}
+
+// Fetch block settings
+$block_settings = get_block_settings_styles(); 
 
 ?>
 
+
 <!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
 
-<div class="block-wrapper">
-	<div class="block-container">
+<div class="<?php echo esc_attr( $class_name . '-block' ); ?> <?php echo esc_attr( $block_settings['classes'] ); ?>">
+	<div class="block-wrapper">
+				
+		<?php if( have_rows('cwib_repeater') ): ?>
 
-		<div class="cwib-block">
-			
-			<?php
-			// Check rows exists.
-			if( have_rows('cwib_repeater') ):
-			?>
+			<?php // Count the number of CTAs
+            $cta_count = count(get_field('cwib_repeater'));
+            ?>
 
-			<div class="cwib-wrapper">
+			<div class="block-container row">
 
-				<?php
-				// Loop through rows.
-				while( have_rows('cwib_repeater') ) : the_row();
+				<?php while( have_rows('cwib_repeater') ) : the_row();
 
 					$cwib_title = get_sub_field( 'cwib_title' );
 					$cwib_text = get_sub_field( 'cwib_text' );
 					$cwib_btn = get_sub_field( 'cwib_btn' );
 					$block_bg = get_sub_field( 'block_bg' );
-					$block_spacing = get_sub_field( 'block_spacing' );
+
+					// Fetch the background color choice
+					$cwib_cta_bg = get_sub_field('cwib_cta_bg'); 
+
+					// Set the background style if color is set
+					$background_style = $cwib_cta_bg ? 'background-color: #' . esc_attr($cwib_cta_bg) . ';' : '';
+					
+					// Set text color to white if the background is black
+					$text_color = strtolower($cwib_cta_bg) === '001011' ? 'color: #ffffff;' : '';
+
+					// Set spacing class; defaults to 'spacing-md' if not set
+					$spacing_class = $cwib_spacing ? 'spacing-' . esc_attr($cwib_spacing) : 'spacing-md';
+					
+                    // Determine column size based on the number of CTAs
+                    $column_class = ($cta_count === 1) ? 'small-12' : 'large-6';
+				
 					?>
 
-						<div class="cwib-block-btn-container row">
-							<div class="cwib-block-btn columns small-6">
+						<div class="cwib-block-btn-container columns <?php echo esc_attr($column_class); ?>">
+							<div class="cwib-block-btn round" style="<?php echo $background_style . $text_color; ?>">
 								
 								<?php if( $cwib_title ): ?>
-									<p><?php echo $cwib_title; ?></p>
+									<p class="cwib-title uppercase"><?php echo $cwib_title; ?></p>
 								<?php endif; ?>
 
-								<p><?php echo $cwib_text; ?></p>
+								<p class="cwib-text"><?php echo $cwib_text; ?></p>
 
 								<?php 
 								if( $cwib_btn ): 
@@ -69,18 +87,11 @@ $block_settings = get_field_object( 'block_bg' );
 							</div>
 						</div>
 				
-				<?php
-				// End loop.
-				endwhile;
-					?>
+				<?php endwhile; ?>
 
 			<div>
 
-			<?php
-			endif;
-			?>		
+		<?php endif; ?>		
 
-		</div>
 	</div>
-
 </div>
