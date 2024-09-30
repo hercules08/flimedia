@@ -1,7 +1,6 @@
 /*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./template-parts/blocks/cta-with-icon-btn/cta-with-icon-btn.scss ***!
   \****************************************************************************************************************************************************************************************************************************************************************************************/
-@charset "UTF-8";
 /*************************************
 Utility - Variables, Tools, Functions, Mixins
 **************************************/
@@ -35,22 +34,22 @@ Utility - Variables, Tools, Functions, Mixins
 -----------------------------------*/
 .cwib-block .cwib-block-btn {
   padding: 10px;
-  position: relative; /* Make the div a positioning context */
+  position: relative;
 }
 .cwib-block .cwib-block-btn p.cwib-text {
   font-size: 66px;
   font-weight: 300;
   line-height: 75.8px;
 }
-.cwib-block .cwib-block-btn a { /* If a link is set, this will turn the whole block into a clickable element*/
+.cwib-block .cwib-block-btn a {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10; /* Bring the <a> to the front */
-  text-indent: -9999px; /* Hide link text but keep it accessible */
-  background: transparent; /* Ensure the link doesn’t cover content visually */
+  z-index: 10;
+  text-indent: -9999px;
+  background: transparent;
 }
 
 /*# sourceMappingURL=cta-with-icon-btn.css.map*/
