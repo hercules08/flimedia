@@ -32,9 +32,6 @@ Utility - Variables, Tools, Functions, Mixins
 /*---------------------------------
 		Mixins
 -----------------------------------*/
-.testimonial-block {
-  border: 1px solid red;
-}
 .testimonial-block .block-container {
   max-width: 763px;
   width: 100%;

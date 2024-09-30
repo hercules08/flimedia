@@ -1,0 +1,35 @@
+@import "../../../src/sass/theme/utility";
+
+// Editor Specific Styles
+.wp-block-acf-tcitc.acf-block-preview {}
+
+
+.tcitc-block {
+
+  .tcitc-block-wrapper {
+    width: 100%;
+    
+    .tcitc-container {
+      .columns {
+        padding-bottom: 2rem;
+      }
+
+      img.tcitc-image {
+        height: 100%;
+      }
+
+      .tcitc-card {
+        padding: 2rem;
+    
+        .tcitc-title {
+          padding-left: 0.9375rem;
+        }
+      }
+    }
+  }
+
+  .tcitc-container * {
+    color: $fli-black;
+  }
+}
+

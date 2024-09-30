@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<?adf version="1.0"?>
+<adf>
+    <prospect>
+        <requestdate><![CDATA[{adf_date}]]></requestdate>
+        <customer>
+            <contact>
+                <name part="first"><![CDATA[{First Name:1}]]></name>
+                <name part="last"><![CDATA[{Last Name:2}]]></name>
+                <email><![CDATA[{Email:3}]]></email>
+<phone><![CDATA[{Phone:1338}]]>
+</phone>
+            </contact>
+            <comments><![CDATA[{Message:4}
+
+Source Page:  {embed_post:post_title}
+Source URL:  {embed_url}]]></comments>
+        </customer>
+        <vendor>
+            <id source="{adf_vendor_source}">{adf_vendor_id}</id>
+            <vendorname><![CDATA[{di_dealer_name}]]></vendorname>
+            <url><![CDATA[http://www.maseratiofportland.com]]></url>
+            <contact>
+                <phone type="voice" time="day"><![CDATA[503-255-7560]]></phone>
+                <email><![CDATA[info@rtgt.com]]></email>
+                <address>
+                    <street line="1"><![CDATA[25300 SW Parkway Ave]]></street>
+                    <city><![CDATA[Wilsonville]]></city>
+                    <regioncode><![CDATA[OR]]></regioncode>
+                    <postalcode><![CDATA[97070]]></postalcode>
+                    <country><![CDATA[US]]></country>
+                </address>
+            </contact>
+        </vendor>
+        <provider>
+            <id source="{adf_provider_source}">{adf_provider_id}</id>
+            <name><![CDATA[Dealer Inspire/{form_title}]]></name>
+            <url><![CDATA[http://www.dealerinspire.com]]></url>
+            <email><![CDATA[support@dealerinspire.com]]></email>
+            <phone><![CDATA[855-357-4677]]></phone>
+            <contact primarycontact="1">
+                <name part="full"><![CDATA[Dealer Inspire Support]]></name>
+                <email><![CDATA[support@dealerinspire.com]]></email>
+                <phone type="voice" time="day"><![CDATA[855-357-4677]]></phone>
+            </contact>
+        </provider>
+    </prospect>
+</adf>

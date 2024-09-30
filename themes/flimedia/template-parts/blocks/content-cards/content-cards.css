@@ -33,12 +33,6 @@ Utility - Variables, Tools, Functions, Mixins
 /*---------------------------------
 		Mixins
 -----------------------------------*/
-.content-cards-block {
-  border: 1px solid red;
-}
-.content-cards-block .content-cards-block-wrapper {
-  border: 1px solid lightblue;
-}
 .content-cards-block .content-cards-block-wrapper p.content-cards-block-title {
   color: #ffffff;
 }

@@ -19,6 +19,40 @@
 			"contentSize": "var(--block-max-width)",
 			"wideSize": "var(--block-wide-max-width)",
 			"fullSize": "none"
+		},
+		"color": {
+			"palette": [
+                {
+                    "name": "Linen",
+                    "slug": "linen",
+                    "color": "#F2EADF"
+                },
+                {
+                    "name": "Green",
+                    "slug": "green",
+                    "color": "#60935D"
+                },
+                {
+                    "name": "Purple",
+                    "slug": "purple",
+                    "color": "#8367C7"
+                },
+                {
+                    "name": "Orange",
+                    "slug": "orange",
+                    "color": "#FA4523"
+                },
+                {
+                    "name": "Black",
+                    "slug": "black",
+                    "color": "#001011"
+                },
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "#ffffff"
+                }
+            ]
 		}
 	},
 	"styles": {

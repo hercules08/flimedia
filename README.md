@@ -1,58 +1,59 @@
-# Fli Media
+# Fli Media  
+<div style="display: inline-block;">
+  <img width="80px" src="themes/flimedia/static-assets/images/favicon.ico" alt="Fli Media logo" title="Fli Media">
+</div>
 
-www.fli.social
+<a href="https://www.fli.social" target="_blank">Website</a></br>
+<a href="mailto:jayvan@fli.social">Email</a></br>
+<a href="https://www.instagram.com/flisocial/" target="_blank">Instagram</a></br>
+<a href="https://mobile.twitter.com/flisocial_pdx" target="_blank">Twitter</a></br>
+<a href="https://www.facebook.com/flisocial" target="_blank">Facebook</a></br>
+<a href="https://www.tiktok.com/@fli_social?lang=en" target="_blank">TikTok</a>
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Custom theme files for Fli Media &copy; 2024
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Node, npm
+* Webpack
+* WordPress
+* Foundation Framework - grid
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* This is a child-theme so you will need the Blocksy parent theme installed as well.
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
+* Set up your local environment (i.e. MAMP PRO)
+* Clone repo to your desired location
+* Navigate into the `themes/flimedia` folder and install dependencies
 ```
-code blocks for commands
+npm install
 ```
+* Generate the build folder
+```
+npm run build
+```
+* Run the program
+```
+npm run dev
+```
+* View on your localhost
 
-## Help
+## Note
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+This program is using the Foundation Framework for layout, but only the grid settings. Do not install the `foundation-sites` dependency from Zurb. Only the grid settings are needed (see `_grid.scss` in the `sass` folder).
 
 ## Authors
 
-Contributors names and contact info
-
-Damola Omotosho 
-Randee Layosa
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+<a href="https://github.com/hercules08/">Damola</a>, 
+<a href="https://github.com/randeelayosa">Randee</a>
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [xxx](https://github.com/)
+* Blocksy - WordPress

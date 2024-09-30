@@ -44,6 +44,11 @@ p.has-large-font-size, p.large {
     padding-right: 0px !important;
 }
 
+figure.wp-block-image {
+    display: flex;
+    justify-content: center;
+}
+
 .block-container {
     color: $fli-black;
 }

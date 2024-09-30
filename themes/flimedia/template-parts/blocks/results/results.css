@@ -1,0 +1,101 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/resolve-url-loader/index.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./template-parts/blocks/results/results.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************/
+/*************************************
+Utility - Variables, Tools, Functions, Mixins
+**************************************/
+/*----------------
+		Font
+------------------*/
+/*---------------------------------
+		Font Weights
+-----------------------------------*/
+/*---------------------------------
+		Mixins & Functions
+-----------------------------------*/
+/*---------------------------------
+		Fli Media Theme Colors Variables
+-----------------------------------*/
+/* Drop Cloth Linen | rgb(242,234,223) */
+/* Wealth Green | rgb(96,147,93) */
+/* Culture Purple | rgb(131,109,199) */
+/* Authentically Orange | rgb(250,69,35) */
+/* Rich Black | rgb(0,16,17) */
+/*----------------
+		Font
+------------------*/
+/* Google Font */
+/* Adobe Font */
+/*---------------------------------
+		Font Weights
+-----------------------------------*/
+/*---------------------------------
+		Mixins
+-----------------------------------*/
+.results-block .results-block-wrapper {
+  border-radius: 5px;
+  width: 100%;
+  padding: 60px 40px;
+}
+.results-block .results-title {
+  padding-left: 0.9375rem;
+}
+.results-block .results-container * {
+  color: #001011;
+}
+.results-block .results-large-image {
+  height: 100%;
+}
+.results-block .results-large-stat {
+  background-color: #F2EADF;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 100%;
+  width: 100%;
+}
+.results-block .results-large-stat h2 {
+  font-size: 4rem;
+  margin: 0;
+}
+.results-block .results-large-stat p {
+  margin: 0.5rem 0 0;
+}
+.results-block .results-small-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.results-block .results-small-stats .results-small-stat {
+  background-color: #F2EADF;
+  padding: 1rem;
+  flex: 1 1 45%;
+}
+.results-block .results-small-stats .results-small-stat h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+.results-block .results-small-stats .results-small-stat p {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+}
+.results-block .results-testimonial {
+  background: #F2EADF;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+.results-block .results-testimonial blockquote {
+  margin: 0;
+  font-style: italic;
+}
+.results-block .results-testimonial blockquote p {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+.results-block .results-testimonial p {
+  margin: 0;
+}
+
+/*# sourceMappingURL=results.css.map*/

@@ -4,18 +4,23 @@
 .wp-block-acf-cta.acf-block-preview {}
 
 .cta-block {
-  border: 1px dashed magenta;
-  .block-wrapper {
-    border: 1px dotted yellow;
-  }
+  // border: 1px dashed magenta;
+
+  // .block-wrapper {
+  //   border: 1px dotted yellow;
+  // }
   
   .block-container {
-    border: 1px dashed blue;
+    // border: 1px dashed blue;
     padding: 60px;
     margin: 0 auto;
     max-width: 900px;
     border-radius: 15px;
     text-align: center;
+
+    .cta-block-btn-wrapper {
+      justify-content: center;
+    }
   
     p.cta-text {
       font-size: 66px;

@@ -5,7 +5,7 @@
     "style": [ "file:./cta.css" ],
     "category": "formatting",
     "icon": "smiley",
-    "keywords": ["cta"],
+    "keywords": ["cta", "text", "button"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "cta.php"

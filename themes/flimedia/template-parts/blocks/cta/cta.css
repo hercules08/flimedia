@@ -32,19 +32,15 @@ Utility - Variables, Tools, Functions, Mixins
 /*---------------------------------
 		Mixins
 -----------------------------------*/
-.cta-block {
-  border: 1px dashed magenta;
-}
-.cta-block .block-wrapper {
-  border: 1px dotted yellow;
-}
 .cta-block .block-container {
-  border: 1px dashed blue;
   padding: 60px;
   margin: 0 auto;
   max-width: 900px;
   border-radius: 15px;
   text-align: center;
+}
+.cta-block .block-container .cta-block-btn-wrapper {
+  justify-content: center;
 }
 .cta-block .block-container p.cta-text {
   font-size: 66px;

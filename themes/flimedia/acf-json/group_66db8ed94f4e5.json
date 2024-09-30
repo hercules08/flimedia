@@ -1,10 +1,10 @@
 {
-    "key": "group_66c4d422ef2cf",
-    "title": "Block: CTA",
+    "key": "group_66db8ed94f4e5",
+    "title": "Block: Testimonial",
     "fields": [
         {
-            "key": "field_66d3c771a9361",
-            "label": "Block: CTA",
+            "key": "field_66db8ed9517df",
+            "label": "Block: Testimonial",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -21,9 +21,29 @@
             "endpoint": 0
         },
         {
-            "key": "field_66c4d423dd4f5",
-            "label": "Title",
-            "name": "cta_title",
+            "key": "field_66db8ed9517c3",
+            "label": "Quote",
+            "name": "testimonial_quote",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_66db8ed9517cb",
+            "label": "Author",
+            "name": "testimonial_author",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -41,9 +61,9 @@
             "append": ""
         },
         {
-            "key": "field_66cd05a2be85d",
-            "label": "Text",
-            "name": "cta_text",
+            "key": "field_66db8ed9517d2",
+            "label": "Association",
+            "name": "testimonial_association",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -61,48 +81,7 @@
             "append": ""
         },
         {
-            "key": "field_66c825ad6c880",
-            "label": "Buttons",
-            "name": "cta_repeater",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "row",
-            "pagination": 0,
-            "min": 1,
-            "max": 2,
-            "collapsed": "",
-            "button_label": "Add Button",
-            "rows_per_page": 20,
-            "sub_fields": [
-                {
-                    "key": "field_66c66f3ee9e50",
-                    "label": "Button",
-                    "name": "cta_btn",
-                    "aria-label": "",
-                    "type": "link",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "parent_repeater": "field_66c825ad6c880"
-                }
-            ]
-        },
-        {
-            "key": "field_66cd14b93520b",
+            "key": "field_66db8f95dd4f6",
             "label": "Block Settings",
             "name": "block_settings",
             "aria-label": "",
@@ -118,7 +97,7 @@
             "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_66c7d9588df86",
+                    "key": "field_66db8f95dd4f7",
                     "label": "Block Background Color",
                     "name": "block_bg",
                     "aria-label": "",
@@ -147,7 +126,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_66c7d9e29b694",
+                    "key": "field_66db8f95dd4f8",
                     "label": "Block Spacing (top and bottom)",
                     "name": "block_spacing",
                     "aria-label": "",
@@ -180,7 +159,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cta"
+                "value": "acf\/testimonial"
             }
         ]
     ],
@@ -193,5 +172,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726530912
+    "modified": 1726446731
 }

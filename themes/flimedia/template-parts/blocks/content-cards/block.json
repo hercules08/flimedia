@@ -5,7 +5,7 @@
     "style": [ "file:./content-cards.css" ],
     "category": "formatting",
     "icon": "smiley",
-    "keywords": ["content-cards"],
+    "keywords": ["content", "card", "text", "image"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "content-cards.php"

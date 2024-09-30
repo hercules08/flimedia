@@ -1,0 +1,93 @@
+@import "../../../src/sass/theme/utility";
+
+// Editor Specific Styles
+.wp-block-acf-results.acf-block-preview {}
+
+
+.results-block {
+  // border: 1px solid yellow;
+
+
+  .results-block-wrapper {
+    // border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    padding: 60px 40px;
+  }
+
+  .results-title {
+    padding-left: 0.9375rem;
+  }
+
+  .results-container * {
+    color: $fli-black;
+  }
+
+  .results-large-image {
+    height: 100%;
+  }
+
+  .results-large-stat {
+    background-color: $fli-linen;
+    padding: 1.5rem;
+    display: flex; //
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem; // add padding for visual balance
+    height: 100%; // ensure it matches the height of the adjacent columns
+    width: 100%;
+
+    h2 {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    p {
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  .results-small-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .results-small-stat {
+      background-color: $fli-linen;
+      padding: 1rem;
+      flex: 1 1 45%;
+
+      h3 {
+        font-size: 2rem;
+        margin: 0;
+      }
+
+      p {
+        margin: 0.5rem 0 0;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .results-testimonial {
+    background: $fli-linen;
+    padding: 1.5rem;
+    gap: 1rem;
+
+
+    blockquote {
+      margin: 0;
+      font-style: italic;
+
+      p {
+        font-size: 2rem;
+        margin: 0 0 1rem;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+

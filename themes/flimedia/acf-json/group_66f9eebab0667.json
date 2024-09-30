@@ -1,10 +1,10 @@
 {
-    "key": "group_66c4d422ef2cf",
-    "title": "Block: CTA",
+    "key": "group_66f9eebab0667",
+    "title": "Block: Two Column Image and Text Card",
     "fields": [
         {
-            "key": "field_66d3c771a9361",
-            "label": "Block: CTA",
+            "key": "field_66f9eebab270a",
+            "label": "Block: Two Column Image and Text Card",
             "name": "",
             "aria-label": "",
             "type": "accordion",
@@ -21,9 +21,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_66c4d423dd4f5",
+            "key": "field_66f9eebab2712",
             "label": "Title",
-            "name": "cta_title",
+            "name": "tcitc_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -41,9 +41,34 @@
             "append": ""
         },
         {
-            "key": "field_66cd05a2be85d",
-            "label": "Text",
-            "name": "cta_text",
+            "key": "field_66f9eebab2748",
+            "label": "Image",
+            "name": "tcitc_img",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_66f9eebab2720",
+            "label": "Card Title",
+            "name": "tcitc_card_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -61,9 +86,29 @@
             "append": ""
         },
         {
-            "key": "field_66c825ad6c880",
-            "label": "Buttons",
-            "name": "cta_repeater",
+            "key": "field_66f9eebab2727",
+            "label": "Card Subtitle",
+            "name": "tcitc_card_subtitle",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66f9eebab272e",
+            "label": "Card Subtext Repeater",
+            "name": "tcitc_card_subtext_repeater",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -74,20 +119,20 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "row",
+            "layout": "table",
             "pagination": 0,
             "min": 1,
             "max": 2,
             "collapsed": "",
-            "button_label": "Add Button",
+            "button_label": "Add Subtext",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_66c66f3ee9e50",
-                    "label": "Button",
-                    "name": "cta_btn",
+                    "key": "field_66f9eebab74a4",
+                    "label": "Subtext",
+                    "name": "tcitc_card_subtext",
                     "aria-label": "",
-                    "type": "link",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -96,13 +141,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
-                    "parent_repeater": "field_66c825ad6c880"
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_66f9eebab272e"
                 }
             ]
         },
         {
-            "key": "field_66cd14b93520b",
+            "key": "field_66f9eebab2758",
             "label": "Block Settings",
             "name": "block_settings",
             "aria-label": "",
@@ -118,7 +167,7 @@
             "layout": "row",
             "sub_fields": [
                 {
-                    "key": "field_66c7d9588df86",
+                    "key": "field_66f9eebabdd2d",
                     "label": "Block Background Color",
                     "name": "block_bg",
                     "aria-label": "",
@@ -132,13 +181,13 @@
                         "id": ""
                     },
                     "choices": {
-                        "001011": "Black",
                         "F2EADF": "Linen",
                         "60935D": "Green",
                         "8367C7": "Purple",
-                        "FA4523": "Orange"
+                        "FA4523": "Orange",
+                        "001011": "Black"
                     },
-                    "default_value": "001011",
+                    "default_value": "F2EADF",
                     "return_format": "value",
                     "multiple": 0,
                     "allow_null": 0,
@@ -147,7 +196,7 @@
                     "placeholder": ""
                 },
                 {
-                    "key": "field_66c7d9e29b694",
+                    "key": "field_66f9eebabdd34",
                     "label": "Block Spacing (top and bottom)",
                     "name": "block_spacing",
                     "aria-label": "",
@@ -180,7 +229,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/cta"
+                "value": "acf\/two-col-img-text-card"
             }
         ]
     ],
@@ -193,5 +242,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726530912
+    "modified": 1727657792
 }

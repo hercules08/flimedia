@@ -1,0 +1,18 @@
+{
+    "name": "acf/two-col-img-text-card",
+    "title": "Two Column Image and Text Card",
+    "description": "A custom two columnn image and text card block that uses ACF fields.",
+    "style": [ "file:./two-col-img-text-card.css" ],
+    "category": "formatting",
+    "icon": "smiley",
+    "keywords": ["two", "column", "image", "text", "card"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "two-col-img-text-card.php"
+    },
+    "supports": {
+        "anchor": true
+    },
+    "editorScript": "two-col-img-text-card-handle-js-editor",
+    "viewScript": "two-col-img-text-card-handle-js-view"
+}
