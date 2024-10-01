@@ -18,7 +18,7 @@
             },
             "layout": "row",
             "pagination": 0,
-            "min": 1,
+            "min": 2,
             "max": 5,
             "collapsed": "",
             "button_label": "Add Tab",
@@ -116,7 +116,7 @@
                             "aria-label": "",
                             "type": "link",
                             "instructions": "",
-                            "required": 0,
+                            "required": 1,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -150,5 +150,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727725090
+    "modified": 1727727192
 }

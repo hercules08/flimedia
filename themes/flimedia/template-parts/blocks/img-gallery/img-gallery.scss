@@ -1,0 +1,48 @@
+@import "../../../src/sass/theme/utility";
+
+// Editor Specific Styles
+.wp-block-acf-img-gallery.acf-block-preview {}
+
+.img-gallery-block {
+  p.img-gallery-title {
+    color: $white;
+  }
+  
+  .img-gallery {
+    .img-gallery-main {
+      margin: 2rem 0;
+      height: 250px;
+
+      @media screen and (min-width: $medium) {
+        height: 350px;
+      }
+      @media screen and (min-width: $large) {
+        height: 450px;
+      }
+
+      img {
+          width: auto;
+          height: 100%;
+          margin: 0 auto;
+      }
+    }
+
+    .img-gallery-thumbnails img {
+      height: 100%;
+      object-fit: contain;
+      cursor: pointer;
+      padding: 5px;
+      border: 1px solid $fli-linen;
+      border-radius: 5px;
+
+      @media screen and (min-width: $medium) {
+        padding: 10px;
+        border-radius: 15px;
+      }
+      @media screen and (min-width: $large) {
+        padding: 1rem;
+      }
+    }
+  }
+
+}

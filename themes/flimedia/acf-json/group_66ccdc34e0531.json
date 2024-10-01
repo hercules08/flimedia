@@ -185,6 +185,13 @@
                 "operator": "==",
                 "value": "acf\/cta-with-icon-btn"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-support.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -196,5 +203,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1726447767
+    "modified": 1727725973
 }

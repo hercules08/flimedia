@@ -1,0 +1,18 @@
+{
+    "name": "acf/img-gallery",
+    "title": "Image Gallery",
+    "description": "A custom Image Gallery block that uses ACF fields.",
+    "style": [ "file:./img-gallery.css" ],
+    "category": "formatting",
+    "icon": "smiley",
+    "keywords": ["gallery", "image"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "img-gallery.php"
+    },
+    "supports": {
+        "anchor": true
+    },
+    "editorScript": "img-gallery-handle-js-editor",
+    "viewScript": "img-gallery-handle-js-view"
+}

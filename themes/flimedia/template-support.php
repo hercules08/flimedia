@@ -44,15 +44,14 @@ get_header(); ?>
                                     <div class="card-content round">
                                         <h3><?php echo esc_html($tab_card_title); ?></h3>
                                         <p><?php echo esc_html($tab_card_text); ?></p>
+                                        <?php if( $tab_card_link ): 
+                                            $link_url = $tab_card_link['url'];
+                                            $link_title = $tab_card_link['title'];
+                                            $link_target = $tab_card_link['target'] ? $tab_card_link['target'] : '_self';
+                                            ?>
+                                                <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+                                        <?php endif; ?>
                                     </div>
-                                    <?php 
-                                    if( $tab_card_link ): 
-                                        $link_url = $tab_card_link['url'];
-                                        $link_title = $tab_card_link['title'];
-                                        $link_target = $tab_card_link['target'] ? $tab_card_link['target'] : '_self';
-                                        ?>
-                                            <a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
-                                    <?php endif; ?>
                                 </div>
                             <?php endwhile;
                         endif; ?>
@@ -65,8 +64,12 @@ get_header(); ?>
         </div>
     <?php endif; ?>
 
+</div>
 
-    <script>
+<?php get_template_part( 'template-parts/cta-with-icon-btn' ); ?>
+
+
+<script>
         document.addEventListener('DOMContentLoaded', function() {
         const tabs = document.querySelectorAll('.tab-link');
         const tabContents = document.querySelectorAll('.tab-content');
@@ -82,10 +85,5 @@ get_header(); ?>
         });
         });
     </script>
-
-
-</div>
-
-
 
 <?php get_footer(); ?>
