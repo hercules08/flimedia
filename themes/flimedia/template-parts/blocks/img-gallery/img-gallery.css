@@ -54,22 +54,44 @@ Utility - Variables, Tools, Functions, Mixins
   height: 100%;
   margin: 0 auto;
 }
-.img-gallery-block .img-gallery .img-gallery-thumbnails img {
+.img-gallery-block .img-gallery .img-gallery-thumbnails {
+  justify-content: center;
+}
+.img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail {
+  max-width: 100px;
+}
+@media screen and (min-width: 641px) {
+  .img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail {
+    max-width: 200px;
+  }
+}
+.img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail img {
   height: 100%;
   object-fit: contain;
   cursor: pointer;
   padding: 5px;
   border: 1px solid #F2EADF;
   border-radius: 5px;
+  transition: transform 0.5s;
+}
+.img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail img:hover {
+  transform: scale(1.03);
+}
+.img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail img.thumbnail-active {
+  border: 2px solid #FA4523;
+  transform: scale(1.1);
+}
+.img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail img.thumbnail-active:hover {
+  transition: none;
 }
 @media screen and (min-width: 641px) {
-  .img-gallery-block .img-gallery .img-gallery-thumbnails img {
+  .img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail img {
     padding: 10px;
     border-radius: 15px;
   }
 }
 @media screen and (min-width: 1025px) {
-  .img-gallery-block .img-gallery .img-gallery-thumbnails img {
+  .img-gallery-block .img-gallery .img-gallery-thumbnails .thumbnail img {
     padding: 1rem;
   }
 }

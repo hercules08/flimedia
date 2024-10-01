@@ -26,7 +26,6 @@ $block_settings = get_block_settings_styles();
 
 // Load values and assign defaults.
 $img_gallery_title = get_field('img_gallery_title');
-$img_gallery_main = get_field('img_gallery_main');
 ?>
 
 
@@ -44,16 +43,26 @@ $img_gallery_main = get_field('img_gallery_main');
 
             <div class="img-gallery">
 
-                 <!-- Main featured image display -->
-                <div class="img-gallery-main row">
-                    <img src="<?php echo esc_url($img_gallery_main['url']); ?>" alt="<?php echo esc_attr($img_gallery_main['alt']); ?>" class="img-gallery-main round">
-                </div>
+                <?php if (have_rows('img_gallery_repeater')):
+                    $thumbnail_count = count(get_field('img_gallery_repeater')); 
+                    ?>
 
-                <!-- Thumbnails below the main image -->
-                <?php if (have_rows('img_gallery_repeater')): ?>
-                    <div class="img-gallery-thumbnails row small-up-5">
+                    <div class="img-gallery-main row">
+                        <?php $first = true;
+                            while (have_rows('img_gallery_repeater')): the_row();
+                                $img_gallery_main = get_sub_field('img_gallery_thumbnails');
+                                
+                                if ($first): ?>
+                                    <img src="<?php echo esc_url($img_gallery_main['url']); ?>" alt="<?php echo esc_attr($img_gallery_main['alt']); ?>" class="round">
+                                    <?php $first = false;
+                                endif;
+                                
+                            endwhile;
+                        ?>
+                    </div>
+
+                    <div class="img-gallery-thumbnails row <?php echo 'small-up-' . $thumbnail_count; ?>">
                         <?php while (have_rows('img_gallery_repeater')): the_row();
-                            $thumbnail_url = get_sub_field('img_gallery_thumbnail_title');
                             $img_gallery_thumbnails = get_sub_field('img_gallery_thumbnails');
                             ?>
 
@@ -63,6 +72,7 @@ $img_gallery_main = get_field('img_gallery_main');
 
                         <?php endwhile; ?>
                     </div>
+
                 <?php endif; ?>
 
             </div>
