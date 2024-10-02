@@ -62,6 +62,50 @@ function theme_enqueue_in_admin() {
 add_action('admin_enqueue_scripts', 'theme_enqueue_in_admin');
 
 
+/**
+ * Custom Post Types
+*/
+require get_stylesheet_directory() . '/inc/cpt.php';
+
+/**
+ * Blocks
+*/
+require get_stylesheet_directory() . '/template-parts/blocks.php';
+
+
+// Add custom block category for FliMedia
+function flimedia_block_categories( $categories ) {
+    return array_merge(
+        array(
+            array(
+                'slug'  => 'flimedia-category',
+                'title' => __( 'Fli Media Blocks', 'flimedia' ),
+                'icon'  => 'flimedia-icon', // Replace with your SVG icon if necessary
+            ),
+        ),
+        $categories
+    );
+}
+add_filter( 'block_categories_all', 'flimedia_block_categories', 10, 2 );
+
+
+//////Register the custom SVG icon for use in the block editor//////
+function flimedia_custom_icon() {
+    // Get SVG content
+    $icon_path = get_template_directory() . '/static-assets/icons/flimedia-icon.svg';
+    $icon_svg = file_get_contents($icon_path);
+
+    // Register the custom icon
+    wp_localize_script(
+        'flimedia-blocks-editor-script',
+        'flimediaIcons',
+        array(
+            'flimediaIcon' => $icon_svg, // Assign SVG content to icon
+        )
+    );
+}
+add_action('enqueue_block_editor_assets', 'flimedia_custom_icon');
+
 
 /**
  * Block Settings Styles in ACF blocks
@@ -99,20 +143,6 @@ function get_block_settings_styles($field_name = 'block_settings') {
         'classes' => trim($classes),
     ];
 }
-
-
-
-
-/**
- * Custom Post Types
-*/
-require get_stylesheet_directory() . '/inc/cpt.php';
-
-/**
- * Blocks
-*/
-require get_stylesheet_directory() . '/template-parts/blocks.php';
-
 
 
 

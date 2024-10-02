@@ -3,9 +3,9 @@
     "title": "Results",
     "description": "A custom results block that uses ACF fields.",
     "style": [ "file:./results.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["results", "testimonial", "data"],
+    "keywords": ["fli media", "results", "testimonial", "data"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "results.php"

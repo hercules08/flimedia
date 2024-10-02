@@ -3,9 +3,9 @@
     "title": "Two Column Image and Text Card",
     "description": "A custom two columnn image and text card block that uses ACF fields.",
     "style": [ "file:./two-col-img-text-card.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["two", "column", "image", "text", "card"],
+    "keywords": ["fli media", "two", "column", "image", "text", "card"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "two-col-img-text-card.php"

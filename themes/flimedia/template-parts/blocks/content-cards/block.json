@@ -3,9 +3,9 @@
     "title": "Content Cards",
     "description": "A custom content-cards block that uses ACF fields.",
     "style": [ "file:./content-cards.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["content", "card", "text", "image"],
+    "keywords": ["fli media", "content", "card", "text", "image"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "content-cards.php"

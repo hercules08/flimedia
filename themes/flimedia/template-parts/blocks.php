@@ -6,12 +6,18 @@
  * @link https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
-
  
+ // Load the SVG icon from the flimedia-icon.svg file
+function flimedia_get_svg_icon($icon_name) {
+    $icon_path = get_template_directory() . '/static-assets/icons/' . $icon_name . '.svg';
+    if (file_exists($icon_path)) {
+        return file_get_contents($icon_path);
+    }
+    return '';
+}
 
 function rtgt_register_acf_blocks() {
-    if ( ! function_exists( 'register_block_type' ) ) {
-        // Block editor is not available.
+    if (!function_exists('register_block_type')) {
         return;
     }
 
@@ -20,13 +26,15 @@ function rtgt_register_acf_blocks() {
 
     foreach ($block_folders as $folder) {
         if ($folder === '.' || $folder === '..') {
-            continue; // Skip current and parent directory references
+            continue;
         }
 
         $block_path = $blocks_dir . '/' . $folder;
         if (is_dir($block_path)) {
-            register_block_type($block_path);
-            
+            register_block_type($block_path, array(
+                'icon' => flimedia_get_svg_icon('flimedia-icon'), // Load the custom SVG icon
+            ));
+
             // Dynamically set the handles for editor and view scripts
             $editor_script_handle = $folder . '-handle-js-editor';
             $view_script_handle = $folder . '-handle-js-view';

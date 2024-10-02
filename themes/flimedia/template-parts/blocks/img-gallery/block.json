@@ -3,12 +3,21 @@
     "title": "Image Gallery",
     "description": "A custom Image Gallery block that uses ACF fields.",
     "style": [ "file:./img-gallery.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["gallery", "image"],
+    "keywords": ["fli media", "gallery", "image"],
+    "render_callback": "block_render",
     "acf": {
         "mode": "preview",
         "renderTemplate": "img-gallery.php"
+    },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "_is_preview": "true"
+            }
+        }
     },
     "supports": {
         "anchor": true

@@ -3,9 +3,9 @@
     "title": "Testimonial",
     "description": "A custom testimonial block that uses ACF fields.",
     "style": [ "file:./testimonial.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["testimonial", "quote"],
+    "keywords": ["fli media", "testimonial", "quote"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "testimonial.php"

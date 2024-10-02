@@ -3,9 +3,9 @@
     "title": "CTA with Icon Button",
     "description": "A custom cta block that uses ACF fields.",
     "style": [ "file:./cta-with-icon-btn.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["cta", "text", "icon", "button"],
+    "keywords": ["fli media", "cta", "text", "icon", "button"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "cta-with-icon-btn.php"

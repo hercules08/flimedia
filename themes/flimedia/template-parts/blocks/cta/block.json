@@ -3,9 +3,9 @@
     "title": "CTA",
     "description": "A custom cta block that uses ACF fields.",
     "style": [ "file:./cta.css" ],
-    "category": "formatting",
+    "category": "flimedia-category",
     "icon": "smiley",
-    "keywords": ["cta", "text", "button"],
+    "keywords": ["fli media", "cta", "text", "button"],
     "acf": {
         "mode": "preview",
         "renderTemplate": "cta.php"
