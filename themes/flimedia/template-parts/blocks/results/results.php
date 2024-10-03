@@ -39,73 +39,84 @@ $results_testimonial_association       = get_field( 'results_testimonial_associa
 ?>
 
 
-<!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
+<?php // Block preview
+if( !empty( $block['data']['_is_preview'] ) ) { ?>
+    <figure>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/template-parts/blocks/<?php echo esc_attr( $class_name ); ?>/block-preview.jpg" alt="Preview of the <?php echo esc_attr( $class_name ); ?> custom block">
+    </figure>
+<?php } else { ?>
 
-<div class="<?php echo esc_attr($class_name . '-block'); ?> <?php echo esc_attr($block_settings['classes']); ?>">
-    <div class="<?php echo esc_attr($class_name . '-block-wrapper'); ?>" style="<?php echo esc_attr($block_settings['styles']); ?>">
 
-		<?php if( $results_title ): ?>
-			<p class="results-title uppercase"><?php echo $results_title; ?></p>
-		<?php endif; ?>
+    <!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
 
-        <div class="<?php echo esc_attr($class_name . '-container'); ?> row">
-            
-            <!-- Large Stat Column -->
-            <div class="columns small-12 large-6">
-				<?php if ($results_layout_selector !== 'image_text'): ?>
-					
-					<div class="results-large-stat round">
-						<h2><?php echo esc_html($results_large_stat); ?></h2>
-                        <p><?php echo esc_html($results_large_stat_label); ?></p>
-					</div>
+    <div class="<?php echo esc_attr($class_name . '-block'); ?> <?php echo esc_attr($block_settings['classes']); ?>">
+        <div class="<?php echo esc_attr($class_name . '-block-wrapper'); ?>" style="<?php echo esc_attr($block_settings['styles']); ?>">
 
-				<?php else: ?> 
+            <?php if( $results_title ): ?>
+                <p class="results-title uppercase"><?php echo $results_title; ?></p>
+            <?php endif; ?>
 
-					<div class="results-large-image">
-						<img src="<?php echo esc_url($results_image['url']); ?>" alt="<?php echo esc_attr($results_image['alt']); ?>">
-						<?php if ($results_image_caption): ?>
-							<p class="results-image-caption">Photo by: <?php echo esc_html($results_image_caption); ?></p>
-						<?php endif; ?>
-					</div>
-					
-				<?php endif; ?>
-            </div>
+            <div class="<?php echo esc_attr($class_name . '-container'); ?> row">
+                
+                <!-- Large Stat Column -->
+                <div class="columns small-12 large-6">
+                    <?php if ($results_layout_selector !== 'image_text'): ?>
+                        
+                        <div class="results-large-stat round">
+                            <h2><?php echo esc_html($results_large_stat); ?></h2>
+                            <p><?php echo esc_html($results_large_stat_label); ?></p>
+                        </div>
 
-            <!-- Small Stats and Testimonial Column -->
-            <div class="columns small-12 large-6">
-                <div class="row small-up-1 medium-up-2 grid-margin-x">
-                    <!-- Small Stats -->
-                    <?php if ($results_small_stats): ?>
-                        <?php foreach ($results_small_stats as $stat): ?>
-                            <div class="results-small-stats columns">
-                                <div class="results-small-stat round">
-                                    <h3><?php echo esc_html($stat['results_number']); ?></h3>
-                                    <p><?php echo esc_html($stat['results_label']); ?></p>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-						<div class="results-large-stat round">
-							<h2><?php echo esc_html($results_large_stat); ?></h2>
-							<p><?php echo esc_html($results_large_stat_label); ?></p>
-						</div>
+                    <?php else: ?> 
+
+                        <div class="results-large-image">
+                            <img src="<?php echo esc_url($results_image['url']); ?>" alt="<?php echo esc_attr($results_image['alt']); ?>">
+                            <?php if ($results_image_caption): ?>
+                                <p class="results-image-caption">Photo by: <?php echo esc_html($results_image_caption); ?></p>
+                            <?php endif; ?>
+                        </div>
+                        
                     <?php endif; ?>
                 </div>
 
-                <!-- Testimonial -->
-                <div class="results-testimonial round" style="margin-top: 1rem;">
-                    <blockquote>
-                        <p>"<?php echo esc_html($results_testimonial_quote); ?>"</p>
-                    </blockquote>
-					<?php if ($results_testimonial_author): ?>
-                    	<p class="results-testimonial-author"><?php echo esc_html($results_testimonial_author); ?></p>
-					<?php endif; ?>
-					<?php if ($results_testimonial_association): ?>
-                    	<p><?php echo esc_html($results_testimonial_association); ?></p>
-					<?php endif; ?>
+                <!-- Small Stats and Testimonial Column -->
+                <div class="columns small-12 large-6">
+                    <div class="row small-up-1 medium-up-2 grid-margin-x">
+                        <!-- Small Stats -->
+                        <?php if ($results_small_stats): ?>
+                            <?php foreach ($results_small_stats as $stat): ?>
+                                <div class="results-small-stats columns">
+                                    <div class="results-small-stat round">
+                                        <h3><?php echo esc_html($stat['results_number']); ?></h3>
+                                        <p><?php echo esc_html($stat['results_label']); ?></p>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <div class="results-large-stat round">
+                                <h2><?php echo esc_html($results_large_stat); ?></h2>
+                                <p><?php echo esc_html($results_large_stat_label); ?></p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <!-- Testimonial -->
+                    <div class="results-testimonial round" style="margin-top: 1rem;">
+                        <blockquote>
+                            <p>"<?php echo esc_html($results_testimonial_quote); ?>"</p>
+                        </blockquote>
+                        <?php if ($results_testimonial_author): ?>
+                            <p class="results-testimonial-author"><?php echo esc_html($results_testimonial_author); ?></p>
+                        <?php endif; ?>
+                        <?php if ($results_testimonial_association): ?>
+                            <p><?php echo esc_html($results_testimonial_association); ?></p>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
+
+
+<?php } ?>

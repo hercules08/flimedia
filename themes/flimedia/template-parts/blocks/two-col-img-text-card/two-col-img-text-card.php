@@ -34,59 +34,70 @@ $tcitc_card_subtitle = get_field('tcitc_card_subtitle');
 ?>
 
 
-<!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
+<?php // Block preview
+if( !empty( $block['data']['_is_preview'] ) ) { ?>
+    <figure>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/template-parts/blocks/two-col-img-text-card/block-preview.jpg" alt="Preview of the Two Column Image and Text Card custom block">
+    </figure>
+<?php } else { ?>
 
-<div class="<?php echo esc_attr($class_name . '-block'); ?> <?php echo esc_attr($block_settings['classes']); ?>">
-    <div class="<?php echo esc_attr($class_name . '-block-wrapper'); ?>">
+    
+    <!-- Note: Custom blocks should use either flexbox or css grid for columns. -->
 
-		<?php if( $tcitc_title ): ?>
-			<p class="tcitc-title uppercase"><?php echo $tcitc_title; ?></p>
-		<?php endif; ?>
+    <div class="<?php echo esc_attr($class_name . '-block'); ?> <?php echo esc_attr($block_settings['classes']); ?>">
+        <div class="<?php echo esc_attr($class_name . '-block-wrapper'); ?>">
 
-        <div class="<?php echo esc_attr($class_name . '-container'); ?> row">
-            
-            <!-- Image Column -->
-            <div class="columns small-12 large-6">
-                <img src="<?php echo esc_url($tcitc_image['url']); ?>" alt="<?php echo esc_attr($tcitc_image['alt']); ?>" class="tcitc-image round">
-            </div>
+            <?php if( $tcitc_title ): ?>
+                <p class="tcitc-title uppercase"><?php echo $tcitc_title; ?></p>
+            <?php endif; ?>
 
-            <!-- Card Column -->
-            <div class="columns small-12 large-6">
+            <div class="<?php echo esc_attr($class_name . '-container'); ?> row">
+                
+                <!-- Image Column -->
+                <div class="columns small-12 large-6">
+                    <img src="<?php echo esc_url($tcitc_image['url']); ?>" alt="<?php echo esc_attr($tcitc_image['alt']); ?>" class="tcitc-image round">
+                </div>
 
-                <div class="tcitc-card round" style="<?php echo esc_attr($block_settings['styles']); ?>">
+                <!-- Card Column -->
+                <div class="columns small-12 large-6">
 
-                    <h3 class="tcitc-card-title"><?php echo $tcitc_card_title; ?></h3>
+                    <div class="tcitc-card round" style="<?php echo esc_attr($block_settings['styles']); ?>">
 
-                    <p class="tcitc-card-subtitle uppercase"><?php echo $tcitc_card_subtitle; ?></p>
-                        
-                    <?php if( have_rows('tcitc_card_subtext_repeater') ): ?>
+                        <h3 class="tcitc-card-title"><?php echo $tcitc_card_title; ?></h3>
 
-                        <?php // Count the number of subtext entries
-                        $tcitc_card_count = count(get_field('tcitc_card_subtext_repeater'));
-                        ?>
-
-                        <div class="tcitc-card-block-container row">
-                            <?php while( have_rows('tcitc_card_subtext_repeater') ) : the_row();
-                                $tcitc_card_subtext = get_sub_field('tcitc_card_subtext');
-                                
-                                // Set class based on the count of subtexts
-                                $tcitc_card_class = ($tcitc_card_count == 2) ? 'small-12 large-6' : 'small-12';
-                                ?>
-
-                                    <div class="tcitc-card-subtext-container columns <?php echo esc_attr($tcitc_card_class); ?>">
-                                        <p class="tcitc-subtext"><?php echo $tcitc_card_subtext; ?></p>
-                                    </div>
+                        <p class="tcitc-card-subtitle uppercase"><?php echo $tcitc_card_subtitle; ?></p>
                             
-                            <?php endwhile; ?>
-                        <div>
+                        <?php if( have_rows('tcitc_card_subtext_repeater') ): ?>
 
-                    <?php endif; ?>
+                            <?php // Count the number of subtext entries
+                            $tcitc_card_count = count(get_field('tcitc_card_subtext_repeater'));
+                            ?>
+
+                            <div class="tcitc-card-block-container row">
+                                <?php while( have_rows('tcitc_card_subtext_repeater') ) : the_row();
+                                    $tcitc_card_subtext = get_sub_field('tcitc_card_subtext');
+                                    
+                                    // Set class based on the count of subtexts
+                                    $tcitc_card_class = ($tcitc_card_count == 2) ? 'small-12 large-6' : 'small-12';
+                                    ?>
+
+                                        <div class="tcitc-card-subtext-container columns <?php echo esc_attr($tcitc_card_class); ?>">
+                                            <p class="tcitc-subtext"><?php echo $tcitc_card_subtext; ?></p>
+                                        </div>
+                                
+                                <?php endwhile; ?>
+                            <div>
+
+                        <?php endif; ?>
+
+                    </div>
 
                 </div>
 
             </div>
 
         </div>
-
     </div>
-</div>
+
+
+<?php } ?>

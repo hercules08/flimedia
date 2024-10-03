@@ -10,6 +10,14 @@
         "mode": "preview",
         "renderTemplate": "content-cards.php"
     },
+    "example": {
+        "attributes": {
+            "mode": "preview",
+            "data": {
+                "_is_preview": "true"
+            }
+        }
+    },
     "supports": {
         "anchor": true
     },
