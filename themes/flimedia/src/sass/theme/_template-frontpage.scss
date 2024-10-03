@@ -1,0 +1,35 @@
+.card-slider-block {
+    border: 1px solid red;
+    background-color: $fli-green;
+    padding: 2rem;
+
+    .card-slider-wrapper {
+        border: 1px solid lightblue;
+
+        .card-slider-image {
+            border: 1px solid magenta;
+            display: none;
+
+            @media screen and (min-width: $large) {
+                display: block;
+              }
+        }
+        .card-slider-card {
+            border: 1px solid lime;
+            
+            .card-slider-content-title-small, 
+            .card-slider-content-title-main, 
+            .card-slider-content-title-text,
+            .card-slider-image-credit  {
+                color: $white;
+            }
+            
+            .card-slider-content {
+                border: 1px solid orange;
+                background-color: $fli-black;
+            }
+        }
+    }
+
+ 
+}

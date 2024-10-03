@@ -26,6 +26,8 @@ a[type=button] {
 	background-color: $fli-black;
 	color: $white;
 	border: 2px solid $fli-black;
+	font-weight: 500;
+	text-align: center;
 	&:hover {
 		background-color: transparent; 
 		color: $black;
@@ -38,9 +40,22 @@ a[type=button] {
     color: $fli-black;
     border: 2px solid $fli-black;
 	font-weight: 500;
+	text-align: center;
 	&:hover {
 		background-color: $fli-black; 
 		color: $white;
+	}
+}
+
+.button-linen {
+	background-color: $fli-linen;
+    color: $fli-black;
+    border: 2px solid $fli-linen;
+	font-weight: 500;
+	text-align: center;
+	&:hover {
+		background-color: transparent; 
+		color: $fli-linen;
 	}
 }
 

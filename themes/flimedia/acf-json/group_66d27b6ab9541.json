@@ -263,6 +263,79 @@
                     "save_other_choice": 0
                 }
             ]
+        },
+        {
+            "key": "field_66feedcf415a6",
+            "label": "Block Settings",
+            "name": "block_settings",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_66feedcf479f1",
+                    "label": "Block Background Color",
+                    "name": "block_bg",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "F2EADF": "Linen",
+                        "60935D": "Green",
+                        "8367C7": "Purple",
+                        "FA4523": "Orange",
+                        "001011": "Black"
+                    },
+                    "default_value": "F2EADF",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_66feedcf479f8",
+                    "label": "Block Spacing (top and bottom)",
+                    "name": "block_spacing",
+                    "aria-label": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "sm": "Small",
+                        "md": "Regular",
+                        "lg": "Large"
+                    },
+                    "default_value": "md",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "other_choice": 0,
+                    "layout": "vertical",
+                    "save_other_choice": 0
+                }
+            ]
         }
     ],
     "location": [
