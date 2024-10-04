@@ -9,6 +9,7 @@ Main JS
 **************************************/
 
 import "./js/theme";
+import "./js/keen-slider";
 
 /*************************************
 Dependency Imports

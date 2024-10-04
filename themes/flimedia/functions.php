@@ -38,6 +38,17 @@ function theme_load_scripts() {
 }
 add_action('wp_enqueue_scripts', 'theme_load_scripts');
 
+//Keen-Slider
+function enqueue_keen_slider_assets() {
+    wp_enqueue_script('keen-slider-js', 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.js', array(), null, true);
+    wp_enqueue_style('keen-slider-css', 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.5/keen-slider.min.css');
+    wp_enqueue_script('keen-slider-custom', get_template_directory_uri() . '/src/js/keen-slider.js', array(), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_keen_slider_assets');
+
+
+
+
 /**
  * Admin Enqueue Styles & Scripts
  */

@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.11.5",
+    "keen-slider": "^6.8.6",
     "sass": "^1.77.4",
     "webpack-livereload-plugin": "^3.0.2"
   },
