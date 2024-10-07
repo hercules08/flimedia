@@ -1,181 +1,104 @@
-// .card-slider-block {
-//     border: 1px solid red;
-//     background-color: $fli-green;
-//     padding: 2rem;
-//     // height: 80vh;
-
-//     // .card-slider-wrapper {
-//     //     background-color: gray;
-//     //     max-height: 80vh;
-//     //     overflow: scroll;
-
-//     //     @media screen and (max-width: $medium) {
-//     //         max-height: 60vh;
-//     //     }
-//     // }
-
-//     .vertical-slider {
-//         border: 1px solid lightblue;
-//         // height: 100%;
-
-//         // @media screen and (max-width: $medium) {
-//         //     width: 100vw;
-//         //     overflow: hidden;
-//         //     overflow-x: scroll;
-//         //     cursor: grab;
-//         // }
-
-//         height: 600px;
-//         display: flex;
-//         // flex-direction: column;
-    
-        
-
-//         .card-slider-image {
-//             border: 1px solid magenta;
-//             display: none;
-//             min-height: 80vh;
-
-
-//             @media screen and (min-width: $medium) {
-//                 display: block;
-//                 position: sticky;
-//                 top: 10px;
-//                 height: 100%;
-//             }
-
-//             img {
-//                 height: 100%;
-//                 width: auto;
-//                 overflow: hidden;
-//             }
-//         }
-//         .card-slider-content {
-//             border: 1px solid lime;
-
-//             display: flex;
-//             align-items: flex-start;
-//             justify-content: center;
-//             background-color: gray;
-//             border: 1px solid blue;
-//             height: 100%;
-//             max-height: 100vh;
-            
-//             .card-slider-content-title-small, 
-//             .card-slider-content-title-main, 
-//             .card-slider-content-title-text,
-//             .card-slider-image-credit  {
-//                 color: $white;
-//             }
-            
-//             .card-slider-content-wrapper {
-//                 border: 1px solid orange;
-//                 background-color: $fli-black;
-//                 padding: 1rem;
-//                 width: 100%;
-//                 height: 90%;
-
-//                 @media screen and (max-width: $medium) {
-//                     width: 60vw;
-//                 }
-
-//                 a {
-//                     max-width: 175px;
-//                     min-width: 100px;
-//                 }
-//             }
-//         }
-//     }
-
- 
-// }
-
-// @media (max-width: 1024px) {
-//     .vertical-slider {
-//         height: auto;
-//         flex-direction: row;
-
-//         .keen-slider__slide {
-//         height: auto;
-//         width: calc(100% / 1); // Adjust perView accordingly
-//         }
-//     }
-// }
-
-
-
-// // Fader Slider CSS
-// .fader-slider {
-//     width: 100%;
-//     position: relative;
-  
-//     .fader-image {
-//       display: block;
-//       width: 100%;
-//       height: auto;
-//       opacity: 0;
-//       transition: opacity 0.5s ease;
-//     }
-  
-//     .keen-slider__slide {
-//       opacity: 1;
-//       position: absolute;
-//       top: 0;
-//       left: 0;
-//       width: 100%;
-//       height: 100%;
-//     }
-  
-//     .keen-slider__slide[aria-hidden="true"] {
-//       opacity: 0;
-//     }
-//   }
-  
-
-
 .card-slider-block {
+    border: 1px solid red;
     padding: 2rem;
     background-color: $fli-green;
+    height: 100vh;
 
-    .card-slider-image {
-        background-color: yellow;
-    }
+    .card-slider-wrapper {
+        height: 100%;
 
-    .fader-slider {
-        position: relative;
-        height: 600px; /* Adjust this to match your design */
-        overflow: hidden;
-        background-color: pink;
-
-        .fader-image {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .combined-slider {
+            border: 1px solid blue;
+            display: flex;
+            // justify-content: space-between;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            // opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-            border: 1px solid blue;
-        }
 
-        .keen-slider__slide[aria-hidden="false"] .fader-image {
-            opacity: 1;
+            .fader-slider {
+                // height: 50vw;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            @media (min-width: 768px) {
+                .fader-slider {
+                    height: 300px;
+                }
+            }
+            
+            .fader__slide {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                // opacity: 0;
+            }
+            
+            .fader img {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+                -webkit-transform: translateY(-50%) translateX(-50%);
+            }
+            
+            .vertical-slider {
+                // width: 50%;
+                position: relative;
+                height: 100%;
+
+                .vertical-slider-slides {
+                    height: 100%;
+
+                    .card-slider-content-wrapper {
+                        background-color: $fli-black;
+                        height: calc(100% - 60px);
+
+                        .card-slider-content {
+                            padding: 1rem 2rem;
+                            display: flex;
+                            flex-direction: column; 
+                            justify-content: space-between;
+                            
+
+                            h3 {
+                                color: $white;
+                            }
+                        }
+
+                        .card-numbers-container {
+                            border: 1px solid orange;
+                            padding: 1rem 2rem 0 0;
+
+                            .card-numbers {
+                                background-color: $fli-linen;
+                                border-radius: 100%;
+
+                                p {
+                                    font-size: 50px;
+                                    text-align: center;
+                                    color: $black;
+                                    margin-bottom: 1rem;
+                                }
+                            }
+                            .card-active {
+                                background-color: $fli-green;
+                            }
+                            .card-numbers.card--active {
+                                background-color: $fli-green; // Or any other highlight color you want
+                            }
+                            
+                        }
+                    }
+                }
+            }
         }
     }
-
-    .vertical-slider {
-        display: flex;
-        // flex-direction: column;
-        height: 100vh; /* Full height for vertical scroll */
-        overflow: hidden;
-
-        .keen-slider__slide {
-            height: auto;
-            min-height: 100vh; /* Each slide takes full screen height */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
+    
 }
+
+
+
+  
