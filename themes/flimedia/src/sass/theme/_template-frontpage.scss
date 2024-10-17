@@ -2,9 +2,14 @@
     border: 1px solid red;
     padding: 2rem;
     background-color: $fli-green;
-    height: 100vh;
+    height: 700px;
+
+    @media (max-width: 640px) {
+        height: 100vh;
+    }
 
     .card-slider-wrapper {
+        border: 1px solid yellow;
         height: 100%;
 
         .combined-slider {
@@ -15,72 +20,129 @@
             height: 100%;
 
             .fader-slider {
+                border: 1px solid pink;
                 // height: 50vw;
                 position: relative;
                 overflow: hidden;
-            }
-            
-            @media (min-width: 768px) {
-                .fader-slider {
-                    height: 300px;
+
+                @media (max-width: 1024px) {
+                    display: none;
+                }
+
+                .fader__slide {
+                    border: 2px dotted lime;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    // opacity: 0;
+                }
+                
+                // .fader-image {
+                //     border: 2px dashed orange;
+                //     width: auto;
+                //     height: 100%;
+                //     object-fit: cover;
+                //     object-position: center;
+                //     position: absolute;
+                // }
+
+                .fader-image {
+                    width: 100%;
+                    height: 100%;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
                 }
             }
             
-            .fader__slide {
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                // opacity: 0;
-            }
-            
-            .fader img {
-                width: 100%;
-                height: auto;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translateY(-50%) translateX(-50%);
-                -webkit-transform: translateY(-50%) translateX(-50%);
-            }
-            
             .vertical-slider {
+                border: 2px dotted royalblue;
                 // width: 50%;
                 position: relative;
                 height: 100%;
 
                 .vertical-slider-slides {
+                    border: 2px dashed peachpuff;
                     height: 100%;
+                    min-width: none;
+
+                    .row {
+                        margin: 0;
+                    }
 
                     .card-slider-content-wrapper {
+                        border: 1px solid sienna;
                         background-color: $fli-black;
-                        height: calc(100% - 60px);
+                        height: 100%;
 
                         .card-slider-content {
-                            padding: 1rem 2rem;
+                            border: 2px dotted indianred;
+                            padding: 1rem;
                             display: flex;
                             flex-direction: column; 
                             justify-content: space-between;
-                            
 
+                            @media (max-width: 1024px) {
+                                height: 100%;
+                            }
+
+                            .card-slider-content-title-small {
+                                margin: 0;
+                            }
+                            
                             h3 {
                                 color: $white;
+                                font-size: 48px;
+                                margin-bottom: 20px;
+                            }
+
+                            a[type=button] {
+                                width: 200px;
+                            }
+
+                            .card-slider-image-credit {
+                                margin: 0;
+                                margin-top: 20px;
+                                font-size: 12px;
                             }
                         }
 
                         .card-numbers-container {
-                            border: 1px solid orange;
-                            padding: 1rem 2rem 0 0;
+                            border: 2px dotted blueviolet;
+                            padding-top: 1rem;
 
+                            @media (max-width: 640px) {
+                                display: flex;
+                                flex-direction: row;
+                                height: auto;
+                            }
+                            
                             .card-numbers {
                                 background-color: $fli-linen;
-                                border-radius: 100%;
-
+                                border-radius: 50%;
+                                width: 75px;
+                                height: 75px;
+                                margin-bottom: 15px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                
                                 p {
                                     font-size: 50px;
                                     text-align: center;
                                     color: $black;
-                                    margin-bottom: 1rem;
+                                    margin: 0;
+                                }
+
+                                @media (max-width: 768px) {
+                                    width: 50px;
+                                    height: 50px;
+                                    margin-right: 10px;
+
+                                    p {
+                                        font-size: 36px;
+                                    }
                                 }
                             }
                             .card-active {
@@ -92,6 +154,7 @@
                             
                         }
                     }
+                    
                 }
             }
         }

@@ -48,7 +48,7 @@
                     "name": "cs_img",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Dimensions need to be 685x685",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -190,5 +190,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1727988757
+    "modified": 1728430436
 }

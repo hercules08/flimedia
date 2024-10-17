@@ -18,18 +18,18 @@ get_header(); ?>
                     <div class="combined-slider row">
 
                         <!-- Fader Slider (Images) -->
-                        <div class="fader-slider keen-slider columns small-12 medium-6">
+                        <div class="fader-slider keen-slider columns medium-12 large-6 round">
                             <?php while( have_rows('cs_repeater') ) : the_row(); 
                                 $cs_image = get_sub_field('cs_img');
                                 ?>
-                                    <div class="fader__slide keen-slider__slide">
-                                        <img src="<?php echo esc_url($cs_image['url']); ?>" alt="<?php echo esc_attr($cs_image['alt']); ?>" class="fader-image">
+                                    <div class="fader__slide keen-slider__slide round">
+                                        <div class="fader-image" style="background-image: url(<?php echo $cs_image['url']; ?>);"></div>     
                                     </div>
                             <?php endwhile; ?>
                         </div>
 
                         <!-- Vertical Slider (Text) -->
-                        <div class="vertical-slider keen-slider columns small-12 medium-6">
+                        <div class="vertical-slider keen-slider columns medium-12 large-6">
 
                             <?php while( have_rows('cs_repeater') ) : the_row();
                                 $cs_title_small = get_sub_field('cs_title_small');
@@ -42,7 +42,7 @@ get_header(); ?>
 
                                     <div class="vertical-slider-slides keen-slider__slide">
                                         <div class="card-slider-content-wrapper row round">
-                                            <div class="card-slider-content columns small-12 medium-10">
+                                            <div class="card-slider-content columns small-12 medium-10 small-order-2 medium-order-1">
                                                 <div class="card-slider-content-top">
                                                     <p class="card-slider-content-title-small uppercase"><?php echo $cs_title_small; ?></p>
                                                     <h3 class="card-slider-content-title-main"><?php echo $cs_title_main; ?></h3>
@@ -66,7 +66,7 @@ get_header(); ?>
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
-                                            <div class="card-numbers-container columns small-12 medium-2">
+                                            <div class="card-numbers-container columns small-12 medium-2 small-order-1 medium-order-2">
                                                 <div id="card1" class="card-numbers">
                                                     <p>1</p>
                                                 </div>
@@ -98,7 +98,6 @@ get_header(); ?>
 
     </div>
 </div>
-
 
 <?php get_footer();
 

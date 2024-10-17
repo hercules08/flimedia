@@ -76,14 +76,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initialize the Vertical Slider (Text)
     const verticalSlider = new KeenSlider(".vertical-slider", {
-        vertical: true,
-        loop: false,
-        rubberband: false,
-        mode: "free",
-        slides: {
-            perView: 1,
-            spacing: 100,
-        },
+            vertical: false,
+            loop: false,
+            rubberband: false,
+            mode: "free",
+            slides: {
+                perView: 1,
+                spacing: 100,
+            },
+            breakpoints: {
+                "(min-width: 1025px)": {
+                    vertical: true,
+                },
+            },
         },
         [WheelControls]
     );
